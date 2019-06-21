@@ -1,0 +1,156 @@
+-Game-
+
+Custom Order Maid 3D 2 version 1.30.1
+
+-Pre-Order Bonuses-
+
+[Pre-Order Bonus 01] [Fabulous Madame + Frau Maid Set]
+[Pre-Order Bonus 02] [Cowgirl Set]
+[Pre-Order Bonus 03] [Melonchan Costume Set]
+[Pre-Order Bonus 04] [Highleg Knight Set]
+[Pre-Order Bonus 05] [Fancy Angel Set]
+[Pre-Order Bonus 06] [Riding Hood Set]
+[GP01 Pre-Order Bonus] [Sexy Tail Dress Set]
+
+-Append-
+
+[COM3D2 Append] [Visual Pack]
+[COM3D2 Append] [Fanbook 3 - Sakura Uraraka Dance, Song, and Costume]
+[COM3D2 Append] [GP01]
+[COM3D2 Append] [CM3D2 Karaoke Pack VR Vol.1]
+[COM3D2 Append] [CM3D2 Karaoke Pack VR Vol.2]
+[COM3D2 Append] [COM3D2 Karaoke Pack VR Vol.1]
+[COM3D2 Append] [COM3D2 Karaoke Pack VR Vol.2]
+
+-Personalities-
+
+[COM3D2 Shop] [Personality Add-on] [Yandere]
+[COM3D2 Shop] [Personality Add-on] [Oneechan]
+[COM3D2 Shop] [Personality Add-on] [Bookworm]
+[COM3D2 Shop] [Personality Add-on] [Sadist]
+[COM3D2 Shop] [Personality Add-on] [Koakuma]
+[COM3D2 Shop] [Personality Add-on] [Genki]
+[COM3D2 Shop] [Personality Add-on] [Anesan]
+[COM3D2 Shop] [Personality Add-on] [Secretary]
+[COM3D2 Shop] [Personality Add-on] [Imouto]
+
+-Personality Transfer Packs-
+
+[COM3D2 Shop] [Transfer Pack] [Yandere]
+[COM3D2 Shop] [Transfer Pack] [Oneechan]
+[COM3D2 Shop] [Transfer Pack] [Sadist]
+[COM3D2 Shop] [Transfer Pack] [Genki]
+
+-Event Add-on Packs-
+
+[COM3D2 Shop] [Event Add-on Pack Vol.1]
+[COM3D2 Shop] [Event Add-on Pack Vol.2]
+[COM3D2 Shop] [Event Add-on Pack Vol.3]
+[COM3D2 Shop] [Event Add-on Pack Vol.4]
+[COM3D2 Shop] [Event Add-on Pack Vol.5]
+[COM3D2 Shop] [Event Add-on Pack Vol.6]
+[COM3D2 Shop] [Event Add-on Pack Vol.7]
+
+-Yotogi and H Event Add-on Packs-
+
+[COM3D2 Shop] [Yotogi & H-event Add-on Pack] [Bookworm]
+[COM3D2 Shop] [Yotogi & H-event Add-on Pack] [Koakuma]
+[COM3D2 Shop] [Yotogi & H-event Add-on Pack] [Anesan]
+
+-Yotogi Class Skills-
+
+[COM3D2 Shop] [Yotogi Class Skills Vol.19]
+[COM3D2 Shop] [Yotogi Class Skills Vol.20]
+[COM3D2 Shop] [Yotogi Class Skills Vol.21]
+[COM3D2 Shop] [Yotogi Class Skills Vol.22]
+[COM3D2 Shop] [Yotogi Class Skills Vol.23]
+
+-Collaborations-
+
+27. [COM3D2 Shop] [Pixel Mint - Paradise Ocean Character Set]
+28. [COM3D2 Shop] [ensemble - Koihana Character Set]
+29. [COM3D2 Shop] [Alicesoft - Rance 10 Character Set] Limited Edition
+30. [COM3D2 Shop] [ANIM - Kabe Tsuma 2]
+31. [COM3D2 Shop] [yuzusoft - Riddle Joker Character Set] [Limited Edition]
+32. [COM3D2 Shop] [F&C - Suigetsu Character Set]
+33. [COM3D2 Shop] [alumisoft - Wanko no Yomeiri Character Set] [Limited Edition]
+34. [COM3D2 Shop] [Madosoft - Raspberry Cube Full Set] [Limited Edition]
+35. [COM3D2 Shop] [Nitroplus - Minikui Mojika no Ko Character Set] [Limited Edition]
+36. [COM3D2 Shop] [Laplacian - Mirai Radio to Jinkou-bato Character Set] [Limited Edition]
+37. [COM3D2 Shop] [Kin'iro Loveriche -Golden Time-] [Limited Edition]
+38. [COM3D2 Shop] [CRYSTALiA - Mekuiro -Tsubaki Renka- Set] [Limited Edition]
+39. [COM3D2 Shop] [Alicesoft - Evenicle 2 Character Set] [Limited Edition]
+40. [COM3D2 Shop] [Clochette - Kokorone Pendulum Swimsuit and Uniform Full Set] [Limited Edition]
+41. [COM3D2 Shop] [Clochette - Kokorone Pendulum Normal Clothes Full Set] [Limited Edition]
+
+-Monthly Packs-
+
+[COM3D2 Append] [Summer 2018 Season Pack]
+[COM3D2 Append] [Autumn 2018 Season Pack]
+[COM3D2 Append] [Winter 2018 Season Pack]
+[COM3D2 Append] [Spring 2019 Season Pack]
+
+-Denkigai Festivals-
+
+2017
+[Denkigai 2017 Winter] [Rindere Acrylic Keychain]
+[Denkigai 2017 Winter] [Gift Card]
+[Denkigai 2017 Winter] [CM3D2 Starter Pack Poster]
+[Denkigai 2017 Winter] [COM3D2 Poster]
+[Denkigai 2017 Winter] [Karaoke Pack VR 2 Poster]
+2018
+[Denkigai 2018 Summer Item Set] [Event Version]
+[Denkigai 2018 Summer] [Gift Card]
+[Denkigai 2018 Summer] [NTR Drama CD]
+[Denkigai 2018 Summer] [COM3D2&CM3D2 WPack Poster]
+[Denkigai 2018 Summer] [Bookworm Slim Poster]
+[Denkigai 2018 Summer] [Bookworm Personality Pack Poster]
+[Denkigai 2018 Summer] [Yoshiko TShirt]
+[Denkigai 2018 Summer] [Analog Record]
+[Denkigai 2018 Summer] [Chu-B Lip S2 Poster]
+[Denkigai 2018 Summer] [Yandere Personality Pack Poster]
+[Denkigai 2018 Winter Item Set] [Event Version]
+[Denkigai 2018 Winter] [Gift Card]
+[Denkigai 2018 Winter] [Mumuta Original Costume Set]
+
+-Dances-
+
+[Grade Up Reservation Campaign Vol.2] [Mainly Priority Dance]
+[KanoTsuku2 Plugin] [Can Know Two Close Dance]
+[COM3D2 Shop] [1st only you - Dance & Event pack]
+[COM3D2 Shop] [Candy Girl Dance]
+
+-Miscellaneous-
+
+[COM3D2 Shop] [Extra Maid Collection]
+[BitCash Collaboration Set]
+[GoGo Curry Collaboration Costume Set]
+[Cafe Mailish Collaboration Maid Set]
+[Cafe Mailish Collaboration Maid Set II]
+[com3d2 and cm3d2 ][bugbug Lingerie]
+[COM3D2 Early Reservation Campaign Fancy Paper]
+[COM3D2 Grade Up Reservation Campaign Vol. 1]
+[COM3D2 Shop] [KISS Event 2018 March Item Set]
+[COM3D2 Shop] [KISS Event 2018 - KISS 20th Anniversary Memorial Book Desktop Item]
+[COM3D2 Tech Gian Promo] [Madosoft Collaboration - Raspberry Cube Uniform Set]
+[COM3D2][CUSTOM MAID VOCAL COLLECTION] [Music Dress Set & Vocal Collection Desktop Item]
+[COM3D2][CUSTOM ORDER MAID VOCAL COLLECTION] [Groove Dress Set & Vocal Collection 2 Desktop Item]
+[Tech Gian Bonus] [Sakura, Moyu Kuro Narikiri Collaboration Set]
+[Kissing Day Plugin]
+[Maid's Day Plugin]
+[Tech Gian] [Voice Actress Concerto]
+[Tech Gian] [Voice Actress Concerto 2]
+[DLSite Bonus] [Nijiyomechan Costume Set]
+
+-Yomeido-
+
+[S-Court CR Shop] [Sticker]
+[S-Court CR Shop] [Bromide]
+[S-Court CR Shop] [Portrait]
+[S-Court CR Shop] [Nice Pot]
+[S-Court CR Shop] [Nice Scroll]
+[S-Court CR Shop] [Master's Sword]
+
+-Official Presets-
+
+Character Election Presets - http://com3d2.jp/election/
