@@ -11,7 +11,7 @@ start = time.time()
 #Check connection
 #if connection is available, Check Update DLC list from repo
 #Write new DLC list if current DLC list is old
-url='https://raw.githubusercontent.com/Tankerch/COM3D2_DLC_Checker/master/COM_ListDLC.lst'
+url='https://raw.githubusercontent.com/Tankerch/COM3D2_DLC_Checker/master/COM_listDLC.lst'
 def check_internet():
     timeout=3
     try:
