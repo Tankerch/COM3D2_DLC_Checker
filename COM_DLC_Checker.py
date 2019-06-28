@@ -8,9 +8,9 @@ init()
 
 start = time.time()
 
-#Check connection
-#if connection is available, Check Update DLC list from repo
-#Write new DLC list if current DLC list is old
+#Check the internet connection
+#if the connection is available, check update DLC list from repositories.
+#Overwrite new DLC list if current DLC list is the old version
 url='https://raw.githubusercontent.com/Tankerch/COM3D2_DLC_Checker/master/COM_NewListDLC.lst'
 def check_internet():
     timeout=3
@@ -52,7 +52,7 @@ print(colored("=================================================================
 print(colored('COM_DLC_Checker', 'cyan',attrs=['bold']))
 print(colored("===========================================================================================", 'cyan',attrs=['bold']))
 
-#Open file and removing header for DLC List
+#Open file and removing header in DLC List
 line_inform = []
 with open('COM_NewListDLC.lst', 'r') as f:
     for _ in range(1):
@@ -62,11 +62,11 @@ with open('COM_NewListDLC.lst', 'r') as f:
 line_DLC = set(list(zip(*line_inform))[0])
 line_informset = set(list(zip(*line_inform))[1])
 
-#Make a set from gamedata
+#Make a set from gamedata folder
 line_Real = set(os.listdir("GameData"))
 line_Real.update(os.listdir("GameData_20"))
 
-#Searching with intersection and linear remove searching
+#Searching with intersection and linear methods
 count_p = set()
 for x in line_DLC.intersection(line_Real):
     for y in line_inform:
@@ -75,7 +75,7 @@ for x in line_DLC.intersection(line_Real):
             line_inform.remove(y)
             break
 
-#Separating installed with not installed
+#Separating DLC that installed with not installed
 count_n = line_informset.difference(count_p)
 
 #Show time
@@ -87,7 +87,7 @@ print(colored("\nNot Installed:", 'cyan',attrs=['bold']))
 for x in sorted(count_n):
     print(x)
 
-#Ending & Note
+#End
 end = time.time()
 print("\n\nElapsed time:", end-start)
 text = input("Press Enter to end program")
