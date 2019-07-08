@@ -1,4 +1,4 @@
-9
+10
 parts_shop011.arc,[Pre-Order Bonus 01] [Fabulous Madame + Frau Maid Set]
 parts_shop018.arc,[Pre-Order Bonus 02] [Cowgirl Set]
 parts_shop020.arc,[Pre-Order Bonus 03] [Melonchan Costume Set]
@@ -89,7 +89,7 @@ csv_kissnohi001.arc,[Kissing Day Plugin]
 csv_maidnohi001.arc,[Maid's Day Plugin]
 parts_vac001.arc,[Tech Gian] [Voice Actress Concerto]
 parts_vac002.arc,[Tech Gian] [Voice Actress Concerto 2]
-,[DLSite Bonus] [Nijiyomechan Costume Set]
+parts_nijiyomec.arc,[DLSite Bonus] [Nijiyomechan Costume Set]
 csv_yomeidokanteidan_sticker.arc,[S-Court CR Shop] [Sticker]
 csv_yomeidokanteidan_bromide.arc,[S-Court CR Shop] [Bromide]
 csv_yomeidokanteidan_portrait.arc,[S-Court CR Shop] [Portrait]
