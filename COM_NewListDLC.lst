@@ -1,4 +1,4 @@
-12
+13
 parts_shop011.arc,[Pre-Order Bonus 01] [Fabulous Madame + Frau Maid Set]
 parts_shop018.arc,[Pre-Order Bonus 02] [Cowgirl Set]
 parts_shop020.arc,[Pre-Order Bonus 03] [Melonchan Costume Set]
@@ -30,6 +30,7 @@ csv_charaevent005.arc,[COM3D2 Shop] [Event Add-on Pack Vol.5]
 csv_charaevent006.arc,[COM3D2 Shop] [Event Add-on Pack Vol.6]
 csv_charaevent007.arc,[COM3D2 Shop] [Event Add-on Pack Vol.7]
 csv_charaevent008.arc,[COM3D2 Shop] [Event Add-on Pack Vol.8]
+csv_charaevent009.arc,[COM3D2 Shop] [Event Add-on Pack Vol.9]
 csv_personal_om001plus.arc,[COM3D2 Shop] [Yotogi & H-event Add-on Pack] [Bookworm]
 csv_personal_om002plus.arc,[COM3D2 Shop] [Yotogi & H-event Add-on Pack] [Koakuma]
 csv_personal_om003plus.arc,[COM3D2 Shop] [Yotogi & H-event Add-on Pack] [Anesan]
@@ -40,7 +41,7 @@ csv_omytgc003.arc,[COM3D2 Shop] [Yotogi Class Skills Vol.21]
 csv_omytgc004.arc,[COM3D2 Shop] [Yotogi Class Skills Vol.22]
 csv_omytgc005.arc,[COM3D2 Shop] [Yotogi Class Skills Vol.23]
 csv_omytgc006.arc,[COM3D2 Shop] [Yotogi Class Skills Vol.24]
-csv_cw001.arc,[COM3D2 Shop] Custom Made 3D2 Costume + Shopping Set Vol. 1
+csv_cw001.arc,[COM3D2 Shop] [Custom Made 3D2 Costume + Shopping Set Vol. 1]
 parts_dlc209.arc,[COM3D2 Shop] [Pixel Mint - Paradise Ocean Character Set]
 parts_dlc211.arc,[COM3D2 Shop] [ensemble - Koihana Character Set]
 parts_dlc214.arc,[COM3D2 Shop] [Alicesoft - Rance 10 Character Set] Limited Edition
