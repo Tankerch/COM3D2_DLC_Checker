@@ -1,4 +1,4 @@
-13
+14
 parts_shop011.arc,[Pre-Order Bonus 01] [Fabulous Madame + Frau Maid Set]
 parts_shop018.arc,[Pre-Order Bonus 02] [Cowgirl Set]
 parts_shop020.arc,[Pre-Order Bonus 03] [Melonchan Costume Set]
@@ -45,7 +45,7 @@ csv_cw001.arc,[COM3D2 Shop] [Custom Made 3D2 Costume + Shopping Set Vol. 1]
 parts_dlc209.arc,[COM3D2 Shop] [Pixel Mint - Paradise Ocean Character Set]
 parts_dlc211.arc,[COM3D2 Shop] [ensemble - Koihana Character Set]
 parts_dlc214.arc,[COM3D2 Shop] [Alicesoft - Rance 10 Character Set] Limited Edition
-parts_dlc252.arc,[COM3D2 Shop] [ANIM - Kabe Tsuma 2]
+parts_dlc218.arc,[COM3D2 Shop] [ANIM - Kabe Tsuma 2]
 parts_dlc220.arc,[COM3D2 Shop] [yuzusoft - Riddle Joker Character Set] [Limited Edition]
 parts_dlc225.arc,[COM3D2 Shop] [F&C - Suigetsu Character Set]
 parts_dlc227.arc,[COM3D2 Shop] [alumisoft - Wanko no Yomeiri Character Set] [Limited Edition]
@@ -60,6 +60,8 @@ parts_dlc267ns.arc,[COM3D2 Shop] [Clochette - Kokorone Pendulum Normal Clothes F
 parts_dlc274.arc,[COM3D2 Shop] [alumisoft - Wanko no Yomeiri 2 Character Set] [Limited Edition]
 parts_dlc277.arc,[COM3D2 Shop] [August - Iris Mysteria Character Set] [Limited Edition]
 parts_dlc279.arc,[COM3D2 Shop] [August - Iris Mysteria Character Set] [Chris Costume Set]
+parts_dlc287.arc,[COM3D2 Shop] [NEKO WORKs - Nekopara Vol.4 Character Set] 
+csv_nekoparataiyo.arc,[COM3D2 Shop] [NEKO WORKs - Taiyou Paradise Dance] 
 bg_sp001.arc,[COM3D2 Append] [Summer 2018 Season Pack]
 bg_sp002.arc,[COM3D2 Append] [Autumn 2018 Season Pack]
 bg_sp003.arc,[COM3D2 Append] [Winter 2018 Season Pack]
