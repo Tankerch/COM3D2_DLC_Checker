@@ -54,8 +54,9 @@ if check_internet():
             input("Failed to download DLC list, please contact author")
             exit()
 else:
+    print("Can't connect to internet, offline file will be used")
     if not os.path.isfile('COM_NewListDLC.lst'): #No connection + offline DLC list
-        input("COM_NewListDLC.lst doesn't exist, Connect to the internet redownload it")
+        input("COM_NewListDLC.lst file doesn't exist, Connect to the internet to download it automatically")
         exit()
 
 print("\nBegin sorting, Please wait a moment")
