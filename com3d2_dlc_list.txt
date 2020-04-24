@@ -1,3 +1,4 @@
+2020/04/24
 -Game-
 ゲーム
 游戏
@@ -191,6 +192,7 @@ CM3D2联动包
 [COM3D2 Shop] [Event Add-on Pack Vol.10] (charaevent010) 
 [COM3D2 Shop] [Event Add-on Pack Vol.11] (charaevent011) 
 [COM3D2 Shop] [Event Add-on Pack Vol.12] (charaevent012,charaevent012add)
+[COM3D2 Shop] [Event Add-on Pack Vol.13] (charaevent013,charaevent013add)
 
 [COM3D2 Shop] [KISS Event 2018 March Item Set] (kissevent2018)
 [COM3D2 Shop] [KISS Event 2018 - KISS 20th Anniversary Memorial Book Desktop Item] (kissevent2018_2)
@@ -244,17 +246,16 @@ CM3D2联动包
 [Denkigai 2019 Winter] [Item Set] (denkigai2019w)
 [Denkigai 2019 Winter] [Ojousama Personality Pack Poster] (denkigai2019wposter)
 
--Monthly Packs-
-シーズンパック
-季度包
-[COM3D2 Append] [Season Pack] [2018 Summer] (sp001)
-[COM3D2 Append] [Season Pack] [2018 Autumn] (sp002)
-[COM3D2 Append] [Season Pack] [2018 Winter] (sp003)
-[COM3D2 Append] [Season Pack] [2019 Spring] (sp004)
-[COM3D2 Append] [Season Pack] [2019 Summer] (sp005)
-[COM3D2 Append] [Season Pack] [2019 Winter] (sp006, cas001-002)
-[COM3D2 Append] [Season Pack] [2020 Spring] (cw004)
-[COM3D2 Shop] [Costume Set] [Vol.1] (cas003-006)
+-Season Pack / Date Pack-
+シーズンパック / デートパック
+季度包/约会包
+[COM3D2 Shop] [Season Pack] [2018 Summer] (sp001)
+[COM3D2 Shop] [Season Pack] [2018 Autumn] (sp002)
+[COM3D2 Shop] [Season Pack] [2018 Winter] (sp003)
+[COM3D2 Shop] [Season Pack] [2019 Spring] (sp004)
+[COM3D2 Shop] [Date Pack] [2019 Summer] (sp005)
+[COM3D2 Shop] [Date Pack] [2019 Winter] (sp006)
+[COM3D2 Shop] [Date Pack] [2020 Spring] (cw004)
 
 -Costume + Shopping Set-
 コスチューム + ショッピングセット
@@ -262,6 +263,13 @@ CM3D2联动包
 [COM3D2 Shop] [Costume+Shopping Set Vol.1] (cw001)
 [COM3D2 Shop] [Costume+Shopping Set Vol.2] (cw002)
 [COM3D2 Shop] [Costume+Shopping Set Vol.3] (cw003)
+
+-Costume Pack / Date Costume Pack-
+コスチュームパック / デートコスチュームパック
+服装包 / 约会服装包
+[COM3D2 Shop] [Date Costume Pack] (cas001-002)
+[COM3D2 Shop] [Costume Pack] [2019 Winter] (sp006cloth1,cas003-006)
+[COM3D2 Shop] [Costume Set] [Marine Sailor Set] (cas007-008)
 
 Chu-B Lip
 [Chu-B Lip] [CM3D2 CBL Maid Set] (cbp)
