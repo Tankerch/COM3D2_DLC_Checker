@@ -6,3 +6,9 @@ Apps that checking which one DLC have been installed and not, for lazy people li
  2. Open "COM_DLC_Checker.exe"
  3. Wait a second
  4. Profit(?)
+
+## 如何使用
+
+ 1. 将最新版本的压缩文件解压到COM3D2目录下
+ 2. 打开COM_DLC_Checker.exe
+ 3. 稍等片刻
