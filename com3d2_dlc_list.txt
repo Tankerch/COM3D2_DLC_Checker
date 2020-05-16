@@ -1,4 +1,4 @@
-2020/04/24
+﻿2020/05/16
 -Game-
 ゲーム
 游戏
@@ -72,7 +72,7 @@ CM3D2联动包
 额外女仆追加包
 [COM3D2 Shop] [Extra Maid Collection] (exm001)
 
--Large Update Pack-
+-Great Update Pack-
 大型アップデートパック
 大型更新包
 [COM3D2 Append] [GP01] (gp001)
@@ -167,6 +167,7 @@ CM3D2联动包
 [COM3D2 Shop] [Yotogi Class Skills Vol.28] (omytgc010)
 [COM3D2 Shop] [Yotogi Class Skills Vol.29] (omytgc011)
 [COM3D2 Shop] [Yotogi Class Skills Vol.30] (omytgc012)
+[COM3D2 Shop] [Yotogi Class Skills Vol.31] (omytgc013)
 
 -Karaoke Pack VR-
 カラオケパックVR
@@ -193,6 +194,7 @@ CM3D2联动包
 [COM3D2 Shop] [Event Add-on Pack Vol.11] (charaevent011) 
 [COM3D2 Shop] [Event Add-on Pack Vol.12] (charaevent012,charaevent012add)
 [COM3D2 Shop] [Event Add-on Pack Vol.13] (charaevent013,charaevent013add)
+[COM3D2 Shop] [Event Add-on Pack Vol.14] (charaevent014,charaevent014add)
 
 [COM3D2 Shop] [KISS Event 2018 March Item Set] (kissevent2018)
 [COM3D2 Shop] [KISS Event 2018 - KISS 20th Anniversary Memorial Book Desktop Item] (kissevent2018_2)
@@ -217,7 +219,8 @@ CM3D2联动包
 -Denkigai Festivals-
 電気外祭り
 电器外祭
-2017 
+2017
+[Denkigai 2017 Winter] [Item Set] (denkigai2017w)
 [Denkigai 2017 Winter] [Gift Card] (denkigai2017wkey)
 [Denkigai 2017 Winter] [COM3D2 Starter Pack Poster] (denkigai2017wPosterStarter)
 [Denkigai 2017 Winter] [COM3D2 Poster] (denkigai2017wPoster3d21)
@@ -270,6 +273,7 @@ CM3D2联动包
 [COM3D2 Shop] [Date Costume Pack] (cas001-002)
 [COM3D2 Shop] [Costume Pack] [2019 Winter] (sp006cloth1,cas003-006)
 [COM3D2 Shop] [Costume Set] [Marine Sailor Set] (cas007-008)
+[COM3D2 Shop] [COM3D2 Costume Set Vol.6] (cas009-cas014)
 
 Chu-B Lip
 [Chu-B Lip] [CM3D2 CBL Maid Set] (cbp)
