@@ -1,4 +1,4 @@
-25
+26
 csv_old.arc,[COM3D2 Compatible Update Patch]
 csv_vp001.arc,[COM3D2 Append] [Visual Pack for Disc] [*CM3D2 VP]
 parts_shop014.arc,[Pre-Order Bonus 01] [Fabulous Madame]
@@ -39,6 +39,7 @@ voice_personal_om006plus.arc,[Personality Add-on] [Buaisou]
 voice_personal_om007plus.arc,[Personality Add-on] [Ojousama]
 voice_exm001.arc,[COM3D2 Shop] [Extra Maid Collection]
 voice_gp001.arc,[COM3D2 Append] [GP01]
+voice_gp001fb.arc,[COM3D2 Append] [GP01] Feedback
 voice_gp002.arc,[COM3D2 Append] [GP02]
 voice_gp002p1.arc,[COM3D2 Append] [GP02] Additional Update 1
 voice_gp002p2.arc,[COM3D2 Append] [GP02] Additional Update 2
@@ -83,6 +84,9 @@ parts_dlc311.arc,[COM3D2 Shop] [COM3D2 Costume Set Vol.2]
 parts_dlc314.arc,[COM3D2 Shop] [COM3D2 Costume Set Vol.4]
 parts_dlc318.arc,[COM3D2 Shop] [Pajamas EX - Mari Set]
 parts_dlc320.arc,[COM3D2 Shop] [COM3D2 Costume Set Vol.5]
+parts_dlc323.arc,[COM3D2 Shop] [COM3D2 Costume Set Vol.7]
+parts_dlc326.arc,[COM3D2 Shop] [Pajamas EX - isami moe Set]
+parts_dlc327.arc,[COM3D2 Shop] [COM3D2 Costume Set Vol.8]
 parts_ggcc.arc,[GoGo Curry Collaboration Costume Set]
 parts_bcc.arc,[BitCash Collaboration Set Vol.1]
 parts_bcc3.arc,[BitCash Collaboration Set Vol.2]
@@ -112,6 +116,7 @@ csv_omytgc010.arc,[COM3D2 Shop] [Yotogi Class Skills Vol.28]
 csv_omytgc011.arc,[COM3D2 Shop] [Yotogi Class Skills Vol.29]
 csv_omytgc012.arc,[COM3D2 Shop] [Yotogi Class Skills Vol.30]
 csv_omytgc013.arc,[COM3D2 Shop] [Yotogi Class Skills Vol.31]
+csv_omytgc014.arc,[COM3D2 Shop] [Yotogi Class Skills Vol.32]
 csv_karaoke001.arc,[COM3D2 Append] [CM3D2 Karaoke Pack VR Vol.1]
 csv_karaoke002.arc,[COM3D2 Append] [CM3D2 Karaoke Pack VR Vol.2]
 csv_karaoke003.arc,[COM3D2 Append] [COM3D2 Karaoke Pack VR Vol.1]

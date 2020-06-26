@@ -1,8 +1,8 @@
-﻿2020/05/16
+﻿2020/6/26
 -Game-
 ゲーム
 游戏
-Custom Order Maid 3D 2 version 1.47.1
+Custom Order Maid 3D 2 version 1.48
 
 -CM3D2 Linkage Package-
 互換アップデートパッチ
@@ -76,6 +76,7 @@ CM3D2联动包
 大型アップデートパック
 大型更新包
 [COM3D2 Append] [GP01] (gp001)
+[COM3D2 Append] [GP01] Feedback (gp001fb)
 [COM3D2 Append] [GP02] (gp002)
 [COM3D2 Append] [GP02] Additional Update 1 (gp002p1)
 [COM3D2 Append] [GP02] Additional Update 2 (gp002p2)
@@ -128,6 +129,9 @@ CM3D2联动包
 [COM3D2 Shop] [COM3D2 Costume Set Vol.4] (dlc314-317)
 [COM3D2 Shop] [Pajamas EX - Mari Set] (dlc318-319)
 [COM3D2 Shop] [COM3D2 Costume Set Vol.5] (dlc320-322)
+[COM3D2 Shop] [COM3D2 Costume Set Vol.7] (dlc323-325)
+[COM3D2 Shop] [Pajamas EX - isami moe Set] (dlc326)
+[COM3D2 Shop] [COM3D2 Costume Set Vol.8] (dlc327-332)
 
 [GoGo Curry Collaboration Set] (ggcc)
 
@@ -167,6 +171,7 @@ CM3D2联动包
 [COM3D2 Shop] [Yotogi Class Skills Vol.28] (omytgc010)
 [COM3D2 Shop] [Yotogi Class Skills Vol.29] (omytgc011)
 [COM3D2 Shop] [Yotogi Class Skills Vol.30] (omytgc012)
+[COM3D2 Shop] [Yotogi Class Skills Vol.31] (omytgc013)
 [COM3D2 Shop] [Yotogi Class Skills Vol.31] (omytgc013)
 
 -Karaoke Pack VR-
