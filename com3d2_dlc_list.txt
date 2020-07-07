@@ -1,8 +1,8 @@
-﻿2020/6/26
+2020/07/06
 -Game-
 ゲーム
 游戏
-Custom Order Maid 3D 2 version 1.48
+Custom Order Maid 3D 2 version 1.49
 
 -CM3D2 Linkage Package-
 互換アップデートパッチ
@@ -77,6 +77,7 @@ CM3D2联动包
 大型更新包
 [COM3D2 Append] [GP01] (gp001)
 [COM3D2 Append] [GP01] Feedback (gp001fb)
+[COM3D2 Append] [GP01] [Anesan Compatible Pack + Anesan hair] (om003_gp001,oldplus007hair)
 [COM3D2 Append] [GP02] (gp002)
 [COM3D2 Append] [GP02] Additional Update 1 (gp002p1)
 [COM3D2 Append] [GP02] Additional Update 2 (gp002p2)
@@ -93,44 +94,47 @@ CM3D2联动包
 [COM3D2 Shop] [Dance - Sweet sweet everyday] (dance_sse)
 [COM3D2 Shop] [Can Know Two Close Dance] [KanoTsuku2 Plugin] (canknowtwoclose)
 [COM3D2 Shop] [Candy girl Dance] (candygirl)
-[COM3D2 Shop] [NEKO WORKs - Neko Para Collab - Dance Pacific Paradise] (nekoparataiyo)
-[COM3D2 Shop] [Dance - 1st only you] & Event pack (senkyo001)
+[COM3D2 Shop] [NEKO WORKs - Taiyou Paradise Dance] (nekoparataiyo)
+[COM3D2 Shop] [1st only you - Dance & Event pack] (senkyo001)
 [COM3D2 INM Shop] [Night Magic Fire (English ver)] (nmfeng)
 
 -Collaborations-
 コラボレーション
 联动包
-[COM3D2 Shop] [Pixel Mint - Paradise Ocean Character Set] (dlc209-210)
-[COM3D2 Shop] [Ensemble - Koihana Character Set] (dlc211-213)
-[COM3D2 Shop] [Alicesoft - Rance 10 Character Set] (dlc214-217)
-[COM3D2 Shop] [ANIM NTR Set - Collab Pack vol.30] (dlc218-219)
-[COM3D2 Shop] [Yuzusoft - Riddle Joker Character Set] [Limited Edition] (dlc220-224)
-[COM3D2 Shop] [F&C - Suigetsu Character Set] (dlc225-226)
-[COM3D2 Shop] [Alumisoft – Wanko no Yomeiri Character Set] (dlc227-229)
-[COM3D2 Shop] [Madosoft - Raspberry Cube Full Set] (dlc230-234, dlc239)
-[COM3D2 Shop] [Nitroplus - Minikui Mojika no Ko Character Set] (dlc235-238)
-[COM3D2 Shop] [Laplacian - Mirai Radio to Jinkou-bato] (dlc240-244)
-[COM3D2 Shop] [Kin'iro Loveriche -Golden Time-] (dlc245-247)
-[COM3D2 Shop] [CRYSTALiA - Mekuiro -Tsubaki Renka- Set] (dlc248-251)
-[COM3D2 Shop] [Alicesoft - Evenicle 2 Character Set] (dlc252-255)
-[COM3D2 Shop] [Clochette - Cororam Pendulum Swimsuit and Uniform Full Set] (dlc256-266, dlc272)
-[COM3D2 Shop] [Clochette - Cororam Pendulum Private Clothes Full Set] (dlc267-271, dlc273)
-[COM3D2 Shop] [Alumisoft – Wanko no Yomeiri Character Set Vol.2] (dlc274-276, dlc281-286)
-[COM3D2 Shop] [August - Iris Mysteria Character Set] [Limited Edition] (dlc277-278)
-[COM3D2 Shop] [August - Iris Mysteria Character Set] [Chris Costume Set] (dlc279)
-[COM3D2 Shop] [NEKO WORKs - Neko Para - Costume Full Set -Early Limited Edition] (dlc287-299)
+[COM3D2 Shop] [Collab.27] [Pixel Mint - Paradise Ocean Character Set] (dlc209-210)
+[COM3D2 Shop] [Collab.28] [Ensemble - Koihana Character Set] (dlc211-213)
+[COM3D2 Shop] [Collab.29] [Alicesoft - Rance 10 Character Set] (dlc214-217)
+[COM3D2 Shop] [Collab.30] [ANIM - Kabe Tsuma 2] (dlc218-219)
+[COM3D2 Shop] [Collab.31] [Yuzusoft - Riddle Joker Character Set] (dlc220-224)
+[COM3D2 Shop] [Collab.32] [F&C - Suigetsu Character Set] (dlc225-226)
+[COM3D2 Shop] [Collab.33] [Alumisoft – Wanko no Yomeiri Character Set] (dlc227-229)
+[COM3D2 Shop] [Collab.34] [Madosoft - Raspberry Cube Full Set] (dlc230-233, dlc239)
+[COM3D2 Shop] [Collab.34] [Madosoft - Raspberry Cube - Cafe] (dlc234)
+[COM3D2 Shop] [Collab.35] [Nitroplus - Minikui Mojika no Ko Character Set] (dlc235-238)
+[COM3D2 Shop] [Collab.36] [Laplacian - Mirai Radio to Jinkou-bato] (dlc240-244)
+[COM3D2 Shop] [Collab.37] [Kin'iro Loveriche -Golden Time-] (dlc245-247)
+[COM3D2 Shop] [Collab.38] [CRYSTALiA - Mekuiro -Tsubaki Renka- Set] (dlc248-251)
+[COM3D2 Shop] [Collab.39] [Alicesoft - Evenicle 2 Character Set] (dlc252-255)
+[COM3D2 Shop] [Collab.40] [Clochette - Cororam Pendulum Swimsuit and Uniform Full Set] (dlc256-266, dlc272)
+[COM3D2 Shop] [Collab.41] [Clochette - Cororam Pendulum Private Clothes Full Set] (dlc267-271, dlc273)
+[COM3D2 Shop] [Collab.42] [Alumisoft – Wanko no Yomeiri Character Set Vol.2] (dlc274-276, dlc281-286)
+[COM3D2 Shop] [Collab.43] [August - Iris Mysteria Character Set] (dlc277-278)
+[COM3D2 Shop] [Collab.43] [August - Iris Mysteria Character Set] [Chris Costume Set] (dlc279)
+-missing- [COM3D2 Shop] [???] (dlc280)
+[COM3D2 Shop] [Collab.44] [NEKO WORKs - Neko Para - Costume Full Set -Early Limited Edition] (dlc287-299)
 [COM3D2 Shop] [Kunoichi Set] (dlc300)
-[COM3D2 Shop] [Giga Ai Kiss Costume full set] (dlc301-304)
-[COM3D2 Shop] [Giga - Ai Kiss Dance] (dlc305)
-[COM3D2 Shop] [SSI Japan Love Vibe Adult Shop & Night Skill Skill Set] (dlc306)
-[COM3D2 Shop] [AUGUST - Iris Mysteria Character Set Vol.2] [Limited Edition] (dlc307-308)
-[COM3D2 Shop] [AUGUST - Iris Mysteria Character Set Vol.2] [Koto Costume Set] (dlc309)
+[COM3D2 Shop] [Collab.45] [Giga Ai Kiss Costume full set] (dlc301-304)
+[COM3D2 Shop] [Collab.46] [Giga - Ai Kiss Dance] (dlc305)
+[COM3D2 Shop] [Collab.47] [SSI Japan Love Vibe Adult Shop & Night Skill Skill Set] (dlc306)
+[COM3D2 Shop] [Collab.48] [AUGUST - Iris Mysteria Character Set Vol.2] [Limited Edition] (dlc307-308)
+[COM3D2 Shop] [Collab.48] [AUGUST - Iris Mysteria Character Set Vol.2] [Koto Costume Set] (dlc309)
+-missing- [COM3D2 Shop] [???] (dlc310)
 [COM3D2 Shop] [COM3D2 Costume Set Vol.2] (dlc311-313)
 [COM3D2 Shop] [COM3D2 Costume Set Vol.4] (dlc314-317)
-[COM3D2 Shop] [Pajamas EX - Mari Set] (dlc318-319)
+[COM3D2 Shop] [Collab.49] [Pajamas EX - Mari Set] (dlc318-319)
 [COM3D2 Shop] [COM3D2 Costume Set Vol.5] (dlc320-322)
 [COM3D2 Shop] [COM3D2 Costume Set Vol.7] (dlc323-325)
-[COM3D2 Shop] [Pajamas EX - isami moe Set] (dlc326)
+[COM3D2 Shop] [Collab.50] [Pajama EX - My teacher's milk scent & H Image set] (dlc326,lovehotel)
 [COM3D2 Shop] [COM3D2 Costume Set Vol.8] (dlc327-332)
 
 [GoGo Curry Collaboration Set] (ggcc)
@@ -144,7 +148,7 @@ CM3D2联动包
 
 [Tech Gian] [Voice Actress Concerto] (vac001)
 [Tech Gian] [Voice Actress Concerto 2] (vac002)
-[Tech Gian Bonus] [Favorite - Sakura, Moyu. Set] (tech003)
+[Tech Gian Bonus] [Favorite - Sakura Moyu. Set] (tech003)
 [Tech Gian Bonus] [Madosoft Collaboration - Raspberry Cube Ruri Uniform] (tech004)
 
 [COM3D2 Shop] [BugBug Lingerie Set] (bugbug002)
@@ -154,7 +158,7 @@ CM3D2联动包
 [Vocal Collection 2] [Groove Dress Set] (cd002)
 [Vocal Collection 3] [Sound Dress Set] (cd003)
 
-[Fanbook 3 - Sakura Uraraka Dance, Song, and Costume] (magazine003)
+[Fanbook 3 - Sakura Uraraka Dance Song and Costume] (magazine003)
 
 -Yotogi Class Skills-
 夜伽クラス
@@ -173,6 +177,7 @@ CM3D2联动包
 [COM3D2 Shop] [Yotogi Class Skills Vol.30] (omytgc012)
 [COM3D2 Shop] [Yotogi Class Skills Vol.31] (omytgc013)
 [COM3D2 Shop] [Yotogi Class Skills Vol.32] (omytgc014)
+[COM3D2 Shop] [Yotogi Class Skills Vol.33] (omytgc015)
 
 -Karaoke Pack VR-
 カラオケパックVR
@@ -201,9 +206,6 @@ CM3D2联动包
 [COM3D2 Shop] [Event Add-on Pack Vol.13] (charaevent013,charaevent013add)
 [COM3D2 Shop] [Event Add-on Pack Vol.14] (charaevent014,charaevent014add)
 
-[COM3D2 Shop] [KISS Event 2018 March Item Set] (kissevent2018)
-[COM3D2 Shop] [KISS Event 2018 - KISS 20th Anniversary Memorial Book Desktop Item] (kissevent2018_2)
-
 -Lover+ Condition & H-event Add-on Pack-
 警戒&恋人+状態＆Hイベント追加パック
 警戒&恋人状态&H事件追加包
@@ -220,16 +222,11 @@ CM3D2联动包
 [Kissing Day Plugin] (kissnohi001)
 [COM3D2 Shop] [2nd Anniversary Event] (2ndanniversary)
 [A.K.Pack Trial Version] (april2020)
+[COM3D2 Shop] [KISS Event 2018 March Item Set] (kissevent2018)
 
 -Denkigai Festivals-
 電気外祭り
 电器外祭
-2017
-[Denkigai 2017 Winter] [Item Set] (denkigai2017w)
-[Denkigai 2017 Winter] [Gift Card] (denkigai2017wkey)
-[Denkigai 2017 Winter] [COM3D2 Starter Pack Poster] (denkigai2017wPosterStarter)
-[Denkigai 2017 Winter] [COM3D2 Poster] (denkigai2017wPoster3d21)
-[Denkigai 2017 Winter] [Karaoke Pack VR 2 Poster] (denkigai2017wPosterkaraoke002)
 2018
 [Denkigai 2018 Summer] [Item Set] (denkigai2018s)
 [Denkigai 2018 Summer] [Gift Card] (denkigai2018spcard)
@@ -243,6 +240,7 @@ CM3D2联动包
 [Denkigai 2018 Summer] [Yandere Personality Pack Poster] (denkigai2018sposteryandere)
 [Denkigai 2018 Winter] [Item Set] [Event Version] (denkigai2018w)
 [Denkigai 2018 Winter] [Gift Card] (denkigai2018wpcard)
+[Denkigai 2018 Winter] [1st Anniversary T-shirt] (denkigai2018wtshirt)
 [Denkigai 2018 Winter] [Mumuta Collab Costume] (denkigai2018wmumuta)
 2019
 [Denkigai 2019 Summer] [Item Set] (denkigai2019s)
@@ -275,10 +273,12 @@ CM3D2联动包
 -Costume Pack / Date Costume Pack-
 コスチュームパック / デートコスチュームパック
 服装包 / 约会服装包
-[COM3D2 Shop] [Date Costume Pack] (cas001-002)
-[COM3D2 Shop] [Costume Pack] [2019 Winter] (sp006cloth1,cas003-006)
+[COM3D2 Shop] [Date Costume Pack 2019 Winter] (sp006cloth1,cas001-002)
+[COM3D2 Shop] [Costume Pack] (cas003-006)
 [COM3D2 Shop] [Costume Set] [Marine Sailor Set] (cas007-008)
 [COM3D2 Shop] [COM3D2 Costume Set Vol.6] (cas009-cas014)
+[COM3D2 Shop] [???] (cas015)
+[COM3D2 Shop] [Cool Cardigan black] (cas016-017)
 
 Chu-B Lip
 [Chu-B Lip] [CM3D2 CBL Maid Set] (cbp)
