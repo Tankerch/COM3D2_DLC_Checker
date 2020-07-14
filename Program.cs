@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
+using System.Windows.Input;
 using Microsoft.Win32;
 
 namespace COM3D2_DLC_Checker
@@ -38,9 +40,14 @@ namespace COM3D2_DLC_Checker
             IDictionary<string, string> DLC_LIST = READ_DLC_LIST();
             List<string> GAMEDATA_LIST = READ_GAMEDATA();
 
-            COMPARE_DLC(DLC_LIST, GAMEDATA_LIST);
+            // DLC LIST SORTED
+            // Item 1 = INSTALLED_DLC
+            // Item 2 = NOT_INSTALLED_DLC
+            Tuple<List<string>, List<string>> DLC_LIST_SORTED = COMPARE_DLC(DLC_LIST, GAMEDATA_LIST);
 
+            PRINT_DLC(DLC_LIST_SORTED.Item1, DLC_LIST_SORTED.Item2);
 
+            EXIT_PROGRAM();
         }
 
         static void PRINT_HEADER()
@@ -72,10 +79,11 @@ namespace COM3D2_DLC_Checker
         static IDictionary<string, string> READ_DLC_LIST()
         {
             // Skip 1 = Remove version header
-            var DLC_LIST_UNFORMATED = File.ReadAllLines(DLC_LIST_PATH)
+            var DLC_LIST_UNFORMATED = File.ReadAllLines(DLC_LIST_PATH, Encoding.UTF8)
                 .Skip(1)
                 .ToList();
 
+            // DLC_LIST_FORMAT = [Keys = DLC_Filename, Value = DLC_Name]
             IDictionary<string, string> DLC_LIST_FORMATED = new Dictionary<string, string>();
 
             foreach (string DLC_LIST in DLC_LIST_UNFORMATED)
@@ -114,26 +122,64 @@ namespace COM3D2_DLC_Checker
 
             List<string> GAMEDATA_LIST = new List<string>();
 
-            GAMEDATA_LIST.AddRange(Directory.GetFiles(@GAMEDATA_DIRECTORY, "*", SearchOption.TopDirectoryOnly));
-            GAMEDATA_LIST.AddRange(Directory.GetFiles(@GAMEDATA_20_DIRECTORY, "*", SearchOption.TopDirectoryOnly));
+            GAMEDATA_LIST.AddRange(Directory.GetFiles(@GAMEDATA_DIRECTORY, "*", SearchOption.TopDirectoryOnly).Select(Path.GetFileName));
+            GAMEDATA_LIST.AddRange(Directory.GetFiles(@GAMEDATA_20_DIRECTORY, "*", SearchOption.TopDirectoryOnly).Select(Path.GetFileName));
 
             return GAMEDATA_LIST;
         }
 
-        static void COMPARE_DLC(IDictionary<string, string> DLC_LIST, List<string> GAMEDATA_LIST)
+        static Tuple<List<string>,List<string>> COMPARE_DLC(IDictionary<string, string> DLC_LIST, List<string> GAMEDATA_LIST)
         {
+            // DLC LIST = [DLC_FILENAME, DLC_NAME]
+            List<string> DLC_FILENAMES = new List<string>(DLC_LIST.Keys);
+            List<string> DLC_NAMES= new List<string>(DLC_LIST.Values);
 
-            List<string> INSTALLED_DLC = new List<string>();
+            List<string> INSTALLED_DLC = new List<string>(); 
+            foreach(string INSTALLED_DLC_FILENAMES in DLC_FILENAMES.Intersect(GAMEDATA_LIST).ToList())
+            {
+                // UNIT_DLC_LIST = [DLC_FILENAME, DLC_NAME]
+                foreach (KeyValuePair<string,string> UNIT_DLC_LIST in DLC_LIST)
+                {
+                    if (INSTALLED_DLC_FILENAMES == UNIT_DLC_LIST.Key)
+                    {
+                        INSTALLED_DLC.Add(UNIT_DLC_LIST.Value);
+                        DLC_LIST.Remove(UNIT_DLC_LIST);
+                        break;
+                    }
+                }
+            }
+            
+            List<string> NOT_INSTALLED_DLC = DLC_NAMES.Except(INSTALLED_DLC).ToList();
+            INSTALLED_DLC.Sort();
+            NOT_INSTALLED_DLC.Sort();
+            return Tuple.Create(INSTALLED_DLC, NOT_INSTALLED_DLC);
         }
 
-        static void PRINT_DLC(string[] INSTALLED_DLC, string[] NOT_INSTALLED_DLC)
+        static void PRINT_DLC(List<string> INSTALLED_DLC, List<string> NOT_INSTALLED_DLC)
         {
-            
+            CONSOLE_COLOR(ConsoleColor.Cyan, "\nAlready Installed:");
+            foreach (string DLC in INSTALLED_DLC)
+            {
+                Console.WriteLine(DLC);
+            }
+
+            CONSOLE_COLOR(ConsoleColor.Cyan, "\nNot Installed :");
+            foreach (string DLC in NOT_INSTALLED_DLC)
+            {
+                Console.WriteLine(DLC);
+            }
         }
 
         static void EXIT_PROGRAM()
         {
-
+            Console.WriteLine("\nPress 'Enter' to exit the process...");
+            while (true)
+            {
+                if (Console.ReadKey().Key != ConsoleKey.Enter)
+                {
+                    break;
+                }
+            }
         }
 
         // Extension
