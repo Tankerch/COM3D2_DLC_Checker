@@ -3,6 +3,12 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationIcon>lc_1_z07_icon.ico</ApplicationIcon>
+    <Authors>Tankerch</Authors>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Tankerch/COM3D2_DLC_Checker</RepositoryUrl>
+    <SignAssembly>false</SignAssembly>
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

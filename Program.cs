@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Windows.Input;
 using Microsoft.Win32;
 
 namespace COM3D2_DLC_Checker
@@ -175,7 +174,7 @@ namespace COM3D2_DLC_Checker
             Console.WriteLine("\nPress 'Enter' to exit the process...");
             while (true)
             {
-                if (Console.ReadKey().Key != ConsoleKey.Enter)
+                if (Console.ReadKey().Key == ConsoleKey.Enter)
                 {
                     break;
                 }
