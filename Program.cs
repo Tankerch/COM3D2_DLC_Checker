@@ -7,6 +7,7 @@ using Microsoft.Win32;
 
 namespace COM3D2_DLC_Checker
 {
+
     class Program
     {
 
@@ -33,7 +34,8 @@ namespace COM3D2_DLC_Checker
                 Console.WriteLine("Can't connect to internet, offline file will be used");
             }
 
-            List<string> DLC_LIST = READ_DLC_LIST();
+            // DLC LIST = [DLC_FILENAME, DLC_NAME]
+            IDictionary<string, string> DLC_LIST = READ_DLC_LIST();
             List<string> GAMEDATA_LIST = READ_GAMEDATA();
 
             COMPARE_DLC(DLC_LIST, GAMEDATA_LIST);
@@ -63,17 +65,26 @@ namespace COM3D2_DLC_Checker
 
         static void UPDATE_DLC_LIST(string UPDATED_CONTENT)
         {
-            
             using StreamWriter writer = new StreamWriter(DLC_LIST_PATH);
             writer.Write(UPDATED_CONTENT);
         }
 
-        static List<string> READ_DLC_LIST()
+        static IDictionary<string, string> READ_DLC_LIST()
         {
             // Skip 1 = Remove version header
-            return File.ReadAllLines(DLC_LIST_PATH)
+            var DLC_LIST_UNFORMATED = File.ReadAllLines(DLC_LIST_PATH)
                 .Skip(1)
                 .ToList();
+
+            IDictionary<string, string> DLC_LIST_FORMATED = new Dictionary<string, string>();
+
+            foreach (string DLC_LIST in DLC_LIST_UNFORMATED)
+            {
+                String[] temp_strlist = DLC_LIST.Split(',');
+                DLC_LIST_FORMATED.Add(temp_strlist[0], temp_strlist[1]);
+            }
+
+            return DLC_LIST_FORMATED;
         }
 
         static string GET_COM3D2_INSTALLPATH()
@@ -109,9 +120,10 @@ namespace COM3D2_DLC_Checker
             return GAMEDATA_LIST;
         }
 
-        static void COMPARE_DLC(List<string> DLC_LIST, List<string> GAMEDATA_LIST)
+        static void COMPARE_DLC(IDictionary<string, string> DLC_LIST, List<string> GAMEDATA_LIST)
         {
-            
+
+            List<string> INSTALLED_DLC = new List<string>();
         }
 
         static void PRINT_DLC(string[] INSTALLED_DLC, string[] NOT_INSTALLED_DLC)
