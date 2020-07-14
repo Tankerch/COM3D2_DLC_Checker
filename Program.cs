@@ -62,11 +62,18 @@ namespace COM3D2_DLC_Checker
             HttpWebRequest request = httpWebRequest;
             request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
 
-            using HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            using Stream stream = response.GetResponseStream();
-            using StreamReader reader = new StreamReader(stream);
+            try
+            {
+                using HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                using Stream stream = response.GetResponseStream();
+                using StreamReader reader = new StreamReader(stream);
 
-            return new Tuple<HttpStatusCode, string>(response.StatusCode, reader.ReadToEnd());
+                return new Tuple<HttpStatusCode, string>(response.StatusCode, reader.ReadToEnd());
+            }
+            catch (System.Net.WebException){
+                return new Tuple<HttpStatusCode, string>(HttpStatusCode.NotFound, null);
+            }
+
         }
 
         static void UPDATE_DLC_LIST(string UPDATED_CONTENT)
@@ -77,10 +84,21 @@ namespace COM3D2_DLC_Checker
 
         static IDictionary<string, string> READ_DLC_LIST()
         {
-            // Skip 1 = Remove version header
-            var DLC_LIST_UNFORMATED = File.ReadAllLines(DLC_LIST_PATH, Encoding.UTF8)
-                .Skip(1)
-                .ToList();
+            List<string> DLC_LIST_UNFORMATED = new List<string>();
+
+            try
+            {
+                // Skip 1 = Remove version header
+                DLC_LIST_UNFORMATED = File.ReadAllLines(DLC_LIST_PATH, Encoding.UTF8)
+                    .Skip(1)
+                    .ToList();
+
+            }
+            catch(FileNotFoundException)
+            {
+                CONSOLE_COLOR(ConsoleColor.Red, "COM_NewListDLC.lst file doesn't exist, Connect to the internet to download it automatically");
+                EXIT_PROGRAM();
+            }
 
             // DLC_LIST_FORMAT = [Keys = DLC_Filename, Value = DLC_Name]
             IDictionary<string, string> DLC_LIST_FORMATED = new Dictionary<string, string>();
@@ -92,6 +110,7 @@ namespace COM3D2_DLC_Checker
             }
 
             return DLC_LIST_FORMATED;
+
         }
 
         static string GET_COM3D2_INSTALLPATH()
@@ -176,7 +195,7 @@ namespace COM3D2_DLC_Checker
             {
                 if (Console.ReadKey().Key == ConsoleKey.Enter)
                 {
-                    break;
+                    System.Environment.Exit(0);
                 }
             }
         }
