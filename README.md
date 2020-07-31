@@ -10,6 +10,5 @@ Apps that checking which one DLC have been installed and not. Always up-to-date 
 
 ## 如何使用
 
-1.  将最新版本的压缩文件解压到 COM3D2 目录下
-2.  打开 COM3D2_DLC_Checker.exe
-3.  稍等片刻
+1.  release里下载最新版本
+2.  运行 COM3D2_DLC_Checker.exe

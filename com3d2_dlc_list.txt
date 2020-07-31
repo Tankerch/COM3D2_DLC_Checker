@@ -1,8 +1,8 @@
-2020/07/06
+2020/07/31
 -Game-
 ゲーム
 游戏
-Custom Order Maid 3D 2 version 1.49
+Custom Order Maid 3D 2 version 1.50.1
 
 -CM3D2 Linkage Package-
 互換アップデートパッチ
@@ -118,9 +118,8 @@ CM3D2联动包
 [COM3D2 Shop] [Collab.40] [Clochette - Cororam Pendulum Swimsuit and Uniform Full Set] (dlc256-266, dlc272)
 [COM3D2 Shop] [Collab.41] [Clochette - Cororam Pendulum Private Clothes Full Set] (dlc267-271, dlc273)
 [COM3D2 Shop] [Collab.42] [Alumisoft – Wanko no Yomeiri Character Set Vol.2] (dlc274-276, dlc281-286)
-[COM3D2 Shop] [Collab.43] [August - Iris Mysteria Character Set] (dlc277-278)
+[COM3D2 Shop] [Collab.43] [August - Iris Mysteria Character Set] (dlc277-278,dlc280)
 [COM3D2 Shop] [Collab.43] [August - Iris Mysteria Character Set] [Chris Costume Set] (dlc279)
--missing- [COM3D2 Shop] [???] (dlc280)
 [COM3D2 Shop] [Collab.44] [NEKO WORKs - Neko Para - Costume Full Set -Early Limited Edition] (dlc287-299)
 [COM3D2 Shop] [Kunoichi Set] (dlc300)
 [COM3D2 Shop] [Collab.45] [Giga Ai Kiss Costume full set] (dlc301-304)
@@ -163,21 +162,21 @@ CM3D2联动包
 -Yotogi Class Skills-
 夜伽クラス
 夜咖课程
-[COM3D2 Shop] [Yotogi Class Skills Vol.19] (omytgc001)
-[COM3D2 Shop] [Yotogi Class Skills Vol.20] (omytgc002)
-[COM3D2 Shop] [Yotogi Class Skills Vol.21] (omytgc003)
-[COM3D2 Shop] [Yotogi Class Skills Vol.22] (omytgc004)
-[COM3D2 Shop] [Yotogi Class Skills Vol.23] (omytgc005)
-[COM3D2 Shop] [Yotogi Class Skills Vol.24] (omytgc006)
-[COM3D2 Shop] [Yotogi Class Skills Vol.25] (omytgc007)
-[COM3D2 Shop] [Yotogi Class Skills Vol.26] (omytgc008)
-[COM3D2 Shop] [Yotogi Class Skills Vol.27] (omytgc009)
-[COM3D2 Shop] [Yotogi Class Skills Vol.28] (omytgc010)
-[COM3D2 Shop] [Yotogi Class Skills Vol.29] (omytgc011)
-[COM3D2 Shop] [Yotogi Class Skills Vol.30] (omytgc012)
-[COM3D2 Shop] [Yotogi Class Skills Vol.31] (omytgc013)
-[COM3D2 Shop] [Yotogi Class Skills Vol.32] (omytgc014)
-[COM3D2 Shop] [Yotogi Class Skills Vol.33] (omytgc015)
+[COM3D2 Shop] [Yotogi Class Skills Vol.19] (omytgc001,omytgc001_old)
+[COM3D2 Shop] [Yotogi Class Skills Vol.20] (omytgc002,omytgc002_old)
+[COM3D2 Shop] [Yotogi Class Skills Vol.21] (omytgc003,omytgc003_old)
+[COM3D2 Shop] [Yotogi Class Skills Vol.22] (omytgc004,omytgc004_old)
+[COM3D2 Shop] [Yotogi Class Skills Vol.23] (omytgc005,omytgc005_old)
+[COM3D2 Shop] [Yotogi Class Skills Vol.24] (omytgc006,omytgc006_old)
+[COM3D2 Shop] [Yotogi Class Skills Vol.25] (omytgc007,omytgc007_old)
+[COM3D2 Shop] [Yotogi Class Skills Vol.26] (omytgc008,omytgc008_old)
+[COM3D2 Shop] [Yotogi Class Skills Vol.27] (omytgc009,omytgc009_add)
+[COM3D2 Shop] [Yotogi Class Skills Vol.28] (omytgc010,omytgc010_add)
+[COM3D2 Shop] [Yotogi Class Skills Vol.29] (omytgc011,omytgc011_add)
+[COM3D2 Shop] [Yotogi Class Skills Vol.30] (omytgc012,omytgc012_add)
+[COM3D2 Shop] [Yotogi Class Skills Vol.31] (omytgc013,omytgc013_add)
+[COM3D2 Shop] [Yotogi Class Skills Vol.32] (omytgc014,omytgc014_add)
+[COM3D2 Shop] [Yotogi Class Skills Vol.33] (omytgc015,omytgc015_add)
 
 -Karaoke Pack VR-
 カラオケパックVR
@@ -187,6 +186,7 @@ CM3D2联动包
 [COM3D2 Append] [COM3D2 Karaoke Pack VR Vol.1] (karaoke003)
 [COM3D2 Append] [COM3D2 Karaoke Pack VR Vol.2] (karaoke004)
 [COM3D2 Append] [COM3D2 Karaoke Pack VR Vol.3] (karaoke005)
+[COM3D2 Append] [COM3D2 Karaoke Pack VR Vol.4] (karaoke006)
 
 -Event Add-on Packs-
 イベント追加パック
@@ -221,6 +221,7 @@ CM3D2联动包
 [Maid's Day Plugin] (maidnohi001)
 [Kissing Day Plugin] (kissnohi001)
 [COM3D2 Shop] [2nd Anniversary Event] (2ndanniversary)
+[COM3D2 EMPIRE STRIKERS] (april2019)
 [A.K.Pack Trial Version] (april2020)
 [COM3D2 Shop] [KISS Event 2018 March Item Set] (kissevent2018)
 
@@ -244,6 +245,7 @@ CM3D2联动包
 [Denkigai 2018 Winter] [Mumuta Collab Costume] (denkigai2018wmumuta)
 2019
 [Denkigai 2019 Summer] [Item Set] (denkigai2019s)
+[Denkigai 2019 Summer] [Gift Card] (denkigai2019spcard)
 [Denkigai 2019 Summer] [Queen Rose Whip + Yotogi Skill] (denkigai2019sbara)
 [Denkigai 2019 Summer] [Mumuta Costume Set 2] (denkigai2019smumuta)
 [Denkigai 2019 Summer] [Stick Poster] [Maid Secretary] (denkigai2019ssposter1)
@@ -262,6 +264,7 @@ CM3D2联动包
 [COM3D2 Shop] [Date Pack] [2019 Summer] (sp005)
 [COM3D2 Shop] [Date Pack] [2019 Winter] (sp006)
 [COM3D2 Shop] [Date Pack] [2020 Spring] (cw004)
+[COM3D2 Shop] [Season Pack] [2020 Summer] (cw005)
 
 -Costume + Shopping Set-
 コスチューム + ショッピングセット
@@ -277,7 +280,7 @@ CM3D2联动包
 [COM3D2 Shop] [Costume Pack] (cas003-006)
 [COM3D2 Shop] [Costume Set] [Marine Sailor Set] (cas007-008)
 [COM3D2 Shop] [COM3D2 Costume Set Vol.6] (cas009-cas014)
-[COM3D2 Shop] [???] (cas015)
+-missing- [COM3D2 Shop] [???] (cas015)
 [COM3D2 Shop] [Cool Cardigan black] (cas016-017)
 
 Chu-B Lip
