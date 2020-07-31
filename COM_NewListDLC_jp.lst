@@ -92,6 +92,7 @@ parts_dlc323.arc,『カスタムオーダーメイド3D2 コスチュームセ�
 parts_dlc326.arc,[Collab.50] 『ぱじゃまエクスタシー ぼくと先生の乳淫せいかつ イメクラHセット』
 bg_lovehotel.arc,[Collab.50] 『ぱじゃまエクスタシー ぼくと先生の乳淫せいかつ イメクラHセット』
 parts_dlc327.arc,『カスタムオーダーメイド3D2 コスチュームセット Vol.8』
+parts_dlc333.arc,,『カスタムオーダーメイド3D2 コスチュームセット Vol.9』
 parts_ggcc.arc,『ゴーゴーカレーコラボセット』
 parts_bcc.arc,『ビットキャッシュコラボキャンペーンアイテム』
 parts_bcc3.arc,『ビットキャッシュコラボアイテム』
@@ -158,6 +159,7 @@ csv_charaevent011.arc,『イベント追加パックvol.11 キャラクターH�
 csv_charaevent012.arc,『イベント追加パックvol.12 キャラクターHイベントプラス』
 csv_charaevent013.arc,『イベント追加パックvol.13 キャラクターHイベントプラス』
 csv_charaevent014.arc,『イベント追加パックvol.14 キャラクターHイベントプラス』
+csv_charaevent015.arc,『イベント追加パックvol.15 キャラクターHイベントプラス』
 csv_charaevent002ntr.arc,『イベント追加パックvol.2 キャラクターHイベントプラス NTR』
 csv_charaevent003ntr.arc,『イベント追加パックvol.3 キャラクターHイベントプラス NTR』
 csv_charaevent004ntr.arc,『イベント追加パックvol.4 キャラクターHイベントプラス NTR』
@@ -166,9 +168,10 @@ csv_charaevent006ntr.arc,『イベント追加パックvol.6 キャラクターH
 csv_charaevent007ntr.arc,『イベント追加パックvol.7 キャラクターHイベントプラス NTR』
 csv_charaevent008ntr.arc,『イベント追加パックvol.8 キャラクターHイベントプラス NTR』
 csv_charaevent009ntr.arc,『イベント追加パックvol.9 キャラクターHイベントプラス NTR』
-csv_charaevent012add.arc,『イベント追加パックvol.12 キャラクターHイベントプラス NTR』
-csv_charaevent013add.arc,『イベント追加パックvol.13 キャラクターHイベントプラス NTR』
-csv_charaevent014add.arc,『イベント追加パックvol.14 キャラクターHイベントプラス NTR』
+csv_charaevent012add.arc,『イベント追加パックvol.12 キャラクターHイベントプラス Ver.文学少女、妹、ボクっ娘対応版』
+csv_charaevent013add.arc,『イベント追加パックvol.13 キャラクターHイベントプラス Ver.小悪魔、無愛想、クーデレ対応版』
+csv_charaevent014add.arc,『イベント追加パックvol.14 キャラクターHイベントプラス Ver.メイド秘書、お嬢様、純真対応版』
+csv_charaevent015add.arc,『イベント追加パックvol.15 キャラクターHイベントプラス Ver.お姉ちゃん、ドS、おしとやか対応版』
 csv_oldplus001.arc,『警戒&恋人+状態＆Hイベント追加パック feat.純真』
 csv_oldplus002.arc,『警戒&恋人+状態＆Hイベント feat.ツンデレ』
 csv_oldplus003.arc,『警戒&恋人+状態＆Hイベント feat.クーデレ』
