@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -120,16 +120,20 @@ namespace COM3D2_DLC_Checker
             const string keyName = "HKEY_CURRENT_USER" + "\\" + "SOFTWARE\\KISS\\カスタムオーダーメイド3D2";
 
             string GAME_DIRECTORY_REGISTRY = (string)Registry.GetValue(keyName,"InstallPath","");
-
-            if (GAME_DIRECTORY_REGISTRY != null)
-            {
-                return GAME_DIRECTORY_REGISTRY;
-            }
-            else
+            
+            if (GAME_DIRECTORY_REGISTRY == null)
             {
                 CONSOLE_COLOR(ConsoleColor.Yellow, "Warning : COM3D2 installation directory is not set in registry. Will using work directory', 'yellow'");
                 return Directory.GetCurrentDirectory();
             }
+            
+            if (!Directory.Exists(GAME_DIRECTORY_REGISTRY))
+            {
+                CONSOLE_COLOR(ConsoleColor.Yellow, "Warning : COM3D2 installation directory set in registry but doesn't exist. Will using work directory', 'yellow'");
+                return Directory.GetCurrentDirectory();
+            }
+            
+            return GAME_DIRECTORY_REGISTRY;
         }
 
         static List<string> READ_GAMEDATA()
