@@ -1,18 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Version>3.0.0</Version>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <ApplicationIcon>lc_1_z07_icon.ico</ApplicationIcon>
     <Authors>Tankerch</Authors>
-    <PackageProjectUrl></PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Tankerch/COM3D2_DLC_Checker</RepositoryUrl>
-    <SignAssembly>false</SignAssembly>
-    <StartupObject></StartupObject>
+    <Description>Console based apps to identify Installed COM3D2 DLC</Description>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <DebugType>portable</DebugType>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishSingleFile>true</PublishSingleFile>
+    <PublishTrimmed>true</PublishTrimmed> 
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
+    <PackageReference Include="SemanticVersioning" Version="2.0.0" />
   </ItemGroup>
-
 </Project>

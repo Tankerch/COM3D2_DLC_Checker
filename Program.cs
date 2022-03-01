@@ -1,194 +1,246 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
+﻿
 using Microsoft.Win32;
+using System.Text.Json;
+using System.Reflection;
+
+
+// Realse
+// dotnet publish -c Release
 
 namespace COM3D2_DLC_Checker
 {
 
     class Program
     {
+        //  =============== Variables ===============
+        static readonly string DlcListFileName = "COM3D2_dlc_list.json";
 
-        // Variabels
-        static readonly string DLC_URL = "https://raw.githubusercontent.com/Tankerch/COM3D2_DLC_Checker/master/COM_NewListDLC.lst";
-        static readonly string DLC_LIST_PATH = Path.Combine(Directory.GetCurrentDirectory(), "COM_NewListDLC.lst");
+        static readonly string DlcListUrl = $"https://raw.githubusercontent.com/Tankerch/COM3D2_DLC_Checker/master/{DlcListFileName}";
+
+        static readonly string RepoUrl = "github.com/Tankerch/COM3D2_DLC_Checker";
+
+        //  =============== END Variables ===============
+
+        static readonly string DlcListPath = Path.Combine(Directory.GetCurrentDirectory(), DlcListFileName);
+
+        static readonly string InstalledKey = "installed";
+        static readonly string NotInstalledKey = "notInstalled";
+
+        static readonly HttpClient client = new HttpClient();
 
         static void Main(string[] args)
         {
-            PRINT_HEADER();
 
-            // HTTP_RESOPOND
-            //  - Item1 = HTTP Status Code
-            //  - Item2 = Internet DLC List content
-            Tuple<HttpStatusCode, string> HTTP_RESPOND = CONNECT_TO_INTERNET(DLC_URL);
+            PrintHeader();
 
-            if (HTTP_RESPOND.Item1 == HttpStatusCode.OK)
+            // Get DLC list from Cloud
+            // User can connect to cloud?
+            // - Yes    : Save cloud data to local file
+            // - No     : Use local data at 'DlcListFileName.json' file
+            GetDLClistFromCloud().GetAwaiter().GetResult();
+
+            // Read from DLC list
+            Dictionary<string, List<string>>? dlcList = null;
+            try
             {
-                Console.WriteLine("Connected to {0}", DLC_URL);
-                UPDATE_DLC_LIST(HTTP_RESPOND.Item2);
+                dlcList = ReadDLClist();
             }
-            else
+            catch (FileNotFoundException)
+            {
+                ConsoleColor(System.ConsoleColor.Red, $"\"{DlcListPath}\" doesn't exist,\nConnect to the internet to download it automatically");
+            }
+            catch (FormatException)
+            {
+                ConsoleColor(System.ConsoleColor.Red, "Failed to read DLC files");
+            }
+            catch (InvalidDataException)
+            {
+                ConsoleColor(System.ConsoleColor.Red, "Using outdated apps to read DLC list, try to update this app");
+            }
+            if (dlcList == null) Exit();
+
+            // Read from game directory
+            List<string> gameFiles = ReadFilesFromGameDirectory();
+
+            // Validate DLC
+            Dictionary<string, List<string>> result = CompareListToGameFiles(dlcList!, gameFiles);
+
+            // Print result
+            PrintList(result[InstalledKey], result[NotInstalledKey]);
+
+            Exit();
+        }
+
+        static void PrintHeader()
+        {
+            ConsoleColor(System.ConsoleColor.Cyan, "===========================================================================================");
+            ConsoleColor(System.ConsoleColor.Cyan, $"COM_DLC_Checker     |   {RepoUrl}");
+            ConsoleColor(System.ConsoleColor.Cyan, "===========================================================================================");
+        }
+
+        static async Task GetDLClistFromCloud()
+        {
+            try
+            {
+                string responseBody = await client.GetStringAsync(DlcListUrl);
+
+                // Write to local file
+                using StreamWriter writer = new StreamWriter(DlcListFileName);
+                writer.Write(responseBody);
+            }
+            catch (HttpRequestException)
             {
                 Console.WriteLine("Can't connect to internet, offline file will be used");
             }
 
-            // DLC LIST = [DLC_FILENAME, DLC_NAME]
-            IDictionary<string, string> DLC_LIST = READ_DLC_LIST();
-            List<string> GAMEDATA_LIST = READ_GAMEDATA();
-
-            // DLC LIST SORTED
-            // Item 1 = INSTALLED_DLC
-            // Item 2 = NOT_INSTALLED_DLC
-            Tuple<List<string>, List<string>> DLC_LIST_SORTED = COMPARE_DLC(DLC_LIST, GAMEDATA_LIST);
-
-            PRINT_DLC(DLC_LIST_SORTED.Item1, DLC_LIST_SORTED.Item2);
-
-            EXIT_PROGRAM();
         }
 
-        static void PRINT_HEADER()
+        static Dictionary<string, List<string>> ReadDLClist()
         {
-            CONSOLE_COLOR(ConsoleColor.Cyan, "===========================================================================================");
-            CONSOLE_COLOR(ConsoleColor.Cyan, "COM_DLC_Checker     |   Github.com/Tankerch/COM3D2_DLC_Checker");
-            CONSOLE_COLOR(ConsoleColor.Cyan, "===========================================================================================");
-        }
+            // string testString = @"{
+            //     ""Version"": 25,
+            //     ""Items"": [
+            //      {
+            //         ""Name"": ""[COM3D2 Compatible Update Patch]"",
+            //         ""Files"": [""csv_old.arc""]
+            //      },
+            //     ]
+            // }";
+            string jsonString = File.ReadAllText(DlcListPath);
+            DLCList? result = JsonSerializer.Deserialize<DLCList>(jsonString);
+            if (result == null)
+            {
+                throw new FormatException();
+            }
 
-        static Tuple<HttpStatusCode, string> CONNECT_TO_INTERNET(string DLC_URL)
-        {
-            HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(DLC_URL);
-            HttpWebRequest request = httpWebRequest;
-            request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
-
+            // Validate DLC version with Apps
+            bool isValid = true;
             try
             {
-                using HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                using Stream stream = response.GetResponseStream();
-                using StreamReader reader = new StreamReader(stream);
-
-                return new Tuple<HttpStatusCode, string>(response.StatusCode, reader.ReadToEnd());
+                isValid = CheckDLCListVersion(result.AppMinVersion);
+                if (!isValid)
+                {
+                    throw new InvalidDataException();
+                }
             }
-            catch (System.Net.WebException){
-                return new Tuple<HttpStatusCode, string>(HttpStatusCode.NotFound, null);
+            catch
+            {
+                throw new InvalidDataException();
             }
 
+            return result.Items.ToDictionary(keySelector: item => item.Name, item => item.Files);
         }
 
-        static void UPDATE_DLC_LIST(string UPDATED_CONTENT)
+        static bool CheckDLCListVersion(string minVersionString)
         {
-            using StreamWriter writer = new StreamWriter(DLC_LIST_PATH);
-            writer.Write(UPDATED_CONTENT);
+            // Min version
+            SemanticVersioning.Version minVersion = new SemanticVersioning.Version(minVersionString);
+
+            // Current version
+            string? currentVersionString = Assembly.GetEntryAssembly()?.GetCustomAttribute<AssemblyFileVersionAttribute>()?.Version;
+
+            // Forced to continue when AppVersion is null/missing
+            if (currentVersionString == null) return true;
+
+            // Convert AssemblyVersion to SemanticVersion 
+            currentVersionString = currentVersionString.Remove(currentVersionString.Length - 2);
+
+            // Compare
+            SemanticVersioning.Version currentVersion = new SemanticVersioning.Version(currentVersionString);
+            return new SemanticVersioning.Range($"~{minVersionString}").IsSatisfied(currentVersion);
         }
 
-        static IDictionary<string, string> READ_DLC_LIST()
-        {
-            List<string> DLC_LIST_UNFORMATED = new List<string>();
 
-            try
-            {
-                // Skip 1 = Remove version header
-                DLC_LIST_UNFORMATED = File.ReadAllLines(DLC_LIST_PATH, Encoding.UTF8)
-                    .Skip(1)
-                    .ToList();
-
-            }
-            catch(FileNotFoundException)
-            {
-                CONSOLE_COLOR(ConsoleColor.Red, "COM_NewListDLC.lst file doesn't exist, Connect to the internet to download it automatically");
-                EXIT_PROGRAM();
-            }
-
-            // DLC_LIST_FORMAT = [Keys = DLC_Filename, Value = DLC_Name]
-            IDictionary<string, string> DLC_LIST_FORMATED = new Dictionary<string, string>();
-
-            foreach (string DLC_LIST in DLC_LIST_UNFORMATED)
-            {
-                String[] temp_strlist = DLC_LIST.Split(',');
-                DLC_LIST_FORMATED.Add(temp_strlist[0], temp_strlist[1]);
-            }
-
-            return DLC_LIST_FORMATED;
-
-        }
-
-        static string GET_COM3D2_INSTALLPATH()
+        static string GetCOM3D2installPath()
         {
             // Default: Current Directory of COM3D2_DLC_Checker
             // Will replaced by COM3D2 InstallPath Registry
             const string keyName = "HKEY_CURRENT_USER" + "\\" + "SOFTWARE\\KISS\\カスタムオーダーメイド3D2";
 
-            string GAME_DIRECTORY_REGISTRY = (string)Registry.GetValue(keyName,"InstallPath","");
+            string? gameDirectoryRegistry = Registry.GetValue(keyName, "InstallPath", "") as string;
 
-            if (GAME_DIRECTORY_REGISTRY != null)
+            if (gameDirectoryRegistry != null)
             {
-                return GAME_DIRECTORY_REGISTRY;
+                return gameDirectoryRegistry;
             }
             else
             {
-                CONSOLE_COLOR(ConsoleColor.Yellow, "Warning : COM3D2 installation directory is not set in registry. Will using work directory', 'yellow'");
+                ConsoleColor(System.ConsoleColor.Yellow, "Warning : COM3D2 installation directory is not set in registry. Will using current directory'");
                 return Directory.GetCurrentDirectory();
             }
         }
 
-        static List<string> READ_GAMEDATA()
+        static List<string> ReadFilesFromGameDirectory()
         {
-            string GAME_DIRECTORY = GET_COM3D2_INSTALLPATH();
-            string GAMEDATA_DIRECTORY = GAME_DIRECTORY + "\\GameData";
-            string GAMEDATA_20_DIRECTORY = GAME_DIRECTORY + "\\GameData_20";
+            // string gameRootDir = getCOM3D2installPath();
+            string gameRootDir = "D:\\Games\\COM3D2";
+            string gamedataDir = gameRootDir + "\\GameData";
+            string gamedata20Dir = gameRootDir + "\\GameData_20";
 
-            List<string> GAMEDATA_LIST = new List<string>();
+            List<string> gamedataList = new List<string>();
 
-            GAMEDATA_LIST.AddRange(Directory.GetFiles(@GAMEDATA_DIRECTORY, "*", SearchOption.TopDirectoryOnly).Select(Path.GetFileName));
-            GAMEDATA_LIST.AddRange(Directory.GetFiles(@GAMEDATA_20_DIRECTORY, "*", SearchOption.TopDirectoryOnly).Select(Path.GetFileName));
+            try
+            {
+                gamedataList.AddRange(GetFilesFromDirectory(gamedataDir));
+                gamedataList.AddRange(GetFilesFromDirectory(gamedata20Dir));
+            }
+            catch
+            {
+                ConsoleColor(System.ConsoleColor.Red, $"Failed to read Gamedata directory at: {gameRootDir}");
+                Exit();
+            }
 
-            return GAMEDATA_LIST;
+            return gamedataList;
         }
 
-        static Tuple<List<string>,List<string>> COMPARE_DLC(IDictionary<string, string> DLC_LIST, List<string> GAMEDATA_LIST)
+        static IEnumerable<string> GetFilesFromDirectory(string path)
         {
-            // DLC LIST = [DLC_FILENAME, DLC_NAME]
-            List<string> DLC_FILENAMES = new List<string>(DLC_LIST.Keys);
-            List<string> DLC_NAMES= new List<string>(DLC_LIST.Values);
+            return Directory.GetFiles(path, "*", SearchOption.TopDirectoryOnly).Select(Path.GetFileName).TakeWhile(file => file != null).Cast<string>();
+        }
 
-            List<string> INSTALLED_DLC = new List<string>(); 
-            foreach(string INSTALLED_DLC_FILENAMES in DLC_FILENAMES.Intersect(GAMEDATA_LIST).ToList())
+        static Dictionary<string, List<string>> CompareListToGameFiles(Dictionary<string, List<string>> dlcList, List<string> gameFiles)
+        {
+            List<string> installedDlc = new List<string>();
+            List<string> notInstalledDlc = new List<string>();
+
+            // Loop for all DLC items
+            foreach (KeyValuePair<string, List<string>> item in dlcList)
             {
-                // UNIT_DLC_LIST = [DLC_FILENAME, DLC_NAME]
-                foreach (KeyValuePair<string,string> UNIT_DLC_LIST in DLC_LIST)
+                bool isSubset = !item.Value.Except(gameFiles).Any();
+
+                // Installed
+                if (isSubset)
                 {
-                    if (INSTALLED_DLC_FILENAMES == UNIT_DLC_LIST.Key)
-                    {
-                        INSTALLED_DLC.Add(UNIT_DLC_LIST.Value);
-                        DLC_LIST.Remove(UNIT_DLC_LIST);
-                        break;
-                    }
+                    installedDlc.Add(item.Key);
+                    continue;
                 }
+
+                // Not Installed
+                notInstalledDlc.Add(item.Key);
             }
-            
-            List<string> NOT_INSTALLED_DLC = DLC_NAMES.Except(INSTALLED_DLC).ToList();
-            INSTALLED_DLC.Sort();
-            NOT_INSTALLED_DLC.Sort();
-            return Tuple.Create(INSTALLED_DLC, NOT_INSTALLED_DLC);
+
+            return new Dictionary<string, List<string>>(){
+               {InstalledKey, installedDlc},
+               {NotInstalledKey, notInstalledDlc},
+            };
         }
 
-        static void PRINT_DLC(List<string> INSTALLED_DLC, List<string> NOT_INSTALLED_DLC)
+        static void PrintList(List<string> installedDlc, List<string> notInstalledDlc)
         {
-            CONSOLE_COLOR(ConsoleColor.Cyan, "\nAlready Installed:");
-            foreach (string DLC in INSTALLED_DLC)
+            ConsoleColor(System.ConsoleColor.Green, "\nFully Installed:");
+            foreach (string dlc in installedDlc)
             {
-                Console.WriteLine(DLC);
+                Console.WriteLine(dlc);
             }
 
-            CONSOLE_COLOR(ConsoleColor.Cyan, "\nNot Installed :");
-            foreach (string DLC in NOT_INSTALLED_DLC)
+            ConsoleColor(System.ConsoleColor.Yellow, "\nIncompleted/Not Installed :");
+            foreach (string dlc in notInstalledDlc)
             {
-                Console.WriteLine(DLC);
+                Console.WriteLine(dlc);
             }
         }
 
-        static void EXIT_PROGRAM()
+        static void Exit()
         {
             Console.WriteLine("\nPress 'Enter' to exit the process...");
             while (true)
@@ -200,8 +252,8 @@ namespace COM3D2_DLC_Checker
             }
         }
 
-        // Extension
-        static void CONSOLE_COLOR(ConsoleColor color, string message)
+        // Utils
+        static void ConsoleColor(ConsoleColor color, string message)
         {
             Console.ForegroundColor = color;
             Console.WriteLine(message);
