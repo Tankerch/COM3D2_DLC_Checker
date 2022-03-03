@@ -172,8 +172,8 @@ namespace COM3D2_DLC_Checker
 
         static List<string> ReadFilesFromGameDirectory()
         {
-            // string gameRootDir = getCOM3D2installPath();
-            string gameRootDir = "D:\\Games\\COM3D2";
+            string gameRootDir = GetCOM3D2installPath();
+            // string gameRootDir = "D:\\Games\\COM3D2";
             string gamedataDir = gameRootDir + "\\GameData";
             string gamedata20Dir = gameRootDir + "\\GameData_20";
 
