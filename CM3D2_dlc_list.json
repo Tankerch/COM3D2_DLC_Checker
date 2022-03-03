@@ -1,0 +1,691 @@
+{
+    "Version": 29,
+    "AppMinVersion": "3.0.0",
+    "Items": [
+        {
+            "Name": "[Pre-Order Bonus 01] [Ordinary Maid Set]",
+            "Files": ["menu_shop001.arc"]
+        },
+        {
+            "Name": "[Pre-Order Bonus 02] [Gothic Lace Dress]",
+            "Files": ["menu_shop002.arc"]
+        },
+        {
+            "Name": "[Pre-Order Bonus 03] [Racing Maid]",
+            "Files": ["menu_shop003.arc"]
+        },
+        {
+            "Name": "[Pre-Order Bonus 04] [Military One Piece]",
+            "Files": ["menu_shop004.arc"]
+        },
+        {
+            "Name": "[Pre-Order Bonus 05] [Teacher Outfit]",
+            "Files": ["menu_shop005.arc"]
+        },
+        {
+            "Name": "[Pre-Order Bonus 06] [Exotic dancer]",
+            "Files": ["menu_shop006.arc"]
+        },
+        {
+            "Name": "[Pre-Order Bonus 07] [Garter Stocking]",
+            "Files": ["menu_shop007.arc"]
+        },
+        {
+            "Name": "[Pre-Order Bonus 08] [Captivating Bustier]",
+            "Files": ["menu_shop008.arc"]
+        },
+        {
+            "Name": "[Pre-Order Bonus 09] [Swimsuit]",
+            "Files": ["menu_shop009.arc"]
+        },
+        {
+            "Name": "[Pre-Order Bonus 10] [Bare Ribbon]",
+            "Files": ["menu_shop010.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [DLC Set Vol.01]",
+            "Files": ["menu_dlc002.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [DLC Set Vol.02]",
+            "Files": ["menu_dlc006.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [DLC Set Vol.03]",
+            "Files": ["menu_dlc010.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [DLC Set Vol.04]",
+            "Files": ["menu_dlc015.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [DLC Set Vol.05]",
+            "Files": ["menu_dlc019.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [DLC Set Vol.06]",
+            "Files": ["menu_dlc023.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [DLC Set Vol.07]",
+            "Files": ["menu_dlc028.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [DLC Set Vol.08]",
+            "Files": ["menu_dlc032.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [DLC Set Vol.09]",
+            "Files": ["menu_dlc036.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [DLC Set Vol.10]",
+            "Files": ["menu_dlc040.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [DLC Set Vol.11]",
+            "Files": ["menu_dlc047.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [DLC Set Vol.12]",
+            "Files": ["menu_dlc053.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 01]",
+            "Files": ["menu_dlc059.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 02]",
+            "Files": ["menu_dlc065.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 03]",
+            "Files": ["menu_dlc071.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 04]",
+            "Files": ["menu_dlc075.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 05]",
+            "Files": ["menu_dlc086.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 06]",
+            "Files": ["menu_dlc091.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 07]",
+            "Files": ["menu_dlc102.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 08]",
+            "Files": ["menu_dlc106.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 09]",
+            "Files": ["menu_dlc114.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 10]",
+            "Files": ["menu_dlc119.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 11]",
+            "Files": ["menu_dlc132.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 12]",
+            "Files": ["menu_dlc135.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 13]",
+            "Files": ["menu_dlc142.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 14]",
+            "Files": ["menu_dlc150.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 15]",
+            "Files": ["menu_dlc160.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 16]",
+            "Files": ["menu_dlc168.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 17]",
+            "Files": ["menu_dlc172.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 18]",
+            "Files": ["menu_dlc176.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 19]",
+            "Files": ["menu_dlc184.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 20]",
+            "Files": ["menu_dlc190.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 21]",
+            "Files": ["menu_dlc193.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Monthly Pack 22]",
+            "Files": ["menu_dlc205.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Alice Soft - Beat Valkyrie Ixseal]",
+            "Files": ["menu_dlc170.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Carol Works - Otorena]",
+            "Files": ["menu_dlc138.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Clochette - Harumina].rar",
+            "Files": ["menu_dlc126.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [-Welcome to Pia Carrot!- Costumes]",
+            "Files": ["menu_dlc044.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Lose - Maitetsu Costumes]",
+            "Files": ["menu_dlc051.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Madsoft - Wagama High Spec Costumes]",
+            "Files": ["menu_dlc057.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Lump of Sugar - Tayutama 1&2 School Uniform]",
+            "Files": ["menu_dlc063.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [White Powder - Lamunation! Rumune and Iris Impersonations]",
+            "Files": ["menu_dlc080.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Senren - Banka Set]",
+            "Files": ["menu_dlc083.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Kabe Tsuma 2 Scenario Set]",
+            "Files": ["menu_dlc084.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Kanotsuku2 + Can Know Two Close Dance]",
+            "Files": ["menu_dlc085.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Pajamas EX - Rabu Rabu Sisters Set]",
+            "Files": ["menu_dlc101.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Minato Soft - Maji de Watashi ni Koishinasai!]",
+            "Files": ["menu_dlc111.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Harukaze - Noratoto]",
+            "Files": ["menu_dlc113.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [NanaWind - Haruoto Alice - Gram]",
+            "Files": ["menu_dlc124.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [NanaWind - Haruoto Alice - Gram Rindou Yaya Set]",
+            "Files": ["menu_dlc125.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [NEKO WORKs -Neko Para]",
+            "Files": ["menu_dlc141.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Lump of Sugar - Tayutama 2 AS]",
+            "Files": ["menu_dlc146.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [ensemble - Ojonai]",
+            "Files": ["menu_dlc155.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Hibiki Works - Niizuma Lovely x Cation]",
+            "Files": ["menu_dlc157.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Make me Lover Full Set]",
+            "Files": ["menu_dlc164.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Harukaze - Noratoto 2]",
+            "Files": ["menu_dlc180.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Giga - Baldr Bringer]",
+            "Files": ["menu_dlc182.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Saga Planets - Kin iro Loveriche Vol. 1]",
+            "Files": ["menu_dlc188.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Saga Planets - Kin iro Loveriche Vol. 2]",
+            "Files": ["menu_dlc196.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [Cocktail Soft - Can Can Bunny Premiere 3]",
+            "Files": ["menu_dlc200.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Collaboration] [F&C - Suigetsu Character Set]",
+            "Files": ["menu_dlc225.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [CM3D2 Shop] [Madosoft - Raspberry Cube Full Set]",
+            "Files": ["parts_dlc230.arc"]
+        },
+        {
+            "Name": "[COM3D2 Append] [Visual Pack]",
+            "Files": ["menu_vp001.arc"]
+        },
+        { "Name": "[CM3D2 Append] [Plus Pack]", "Files": ["menu_pp001.arc"] },
+        {
+            "Name": "[CM3D2 Append] [Plus Pack ACT 2]",
+            "Files": ["menu_pp002.arc"]
+        },
+        {
+            "Name": "[Chu-B Lip Bonus] [Skill Disc]",
+            "Files": ["material_cbp.arc"]
+        },
+        {
+            "Name": "[CM3D2 Append] [Plus Pack ACT 3]",
+            "Files": ["menu_pp003.arc"]
+        },
+        {
+            "Name": "[CM3D2 Append] [Plus Pack ACT 3.1]",
+            "Files": ["menu_pp003p.arc"]
+        },
+        {
+            "Name": "[CM3D2 Append] [Vacation Pack VR]",
+            "Files": ["menu_vrcom.arc"]
+        },
+        {
+            "Name": "[CM3D2 Append] [Karaoke Pack VR]",
+            "Files": ["menu_karaoke001.arc"]
+        },
+        {
+            "Name": "[CM3D2 Append] [Karaoke Pack VR 2]",
+            "Files": ["menu_karaoke002.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Personality Add-on] [Yandere]",
+            "Files": ["csv_personal001.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Personality Add-on] [Oneechan]",
+            "Files": ["csv_personal002.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Personality Add-on] [Genki]",
+            "Files": ["csv_personal003.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Personality Add-on] [Sadist]",
+            "Files": ["csv_personal004.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.01] [Sweet Maid]",
+            "Files": ["csv_ytgc001.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.02] [Party Maid]",
+            "Files": ["csv_ytgc002.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.03] [Sex Slave Maid]",
+            "Files": ["csv_ytgc003.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.04] [Bridal Maid]",
+            "Files": ["csv_ytgc004.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.05] [Succubus Maid]",
+            "Files": ["csv_ytgc005.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.06] [Queen Maid]",
+            "Files": ["csv_ytgc006.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.07] [Darkness Maid]",
+            "Files": ["csv_ytgc007.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.08] [Cherished Maid]",
+            "Files": ["csv_ytgc008.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.09] [Bound Maid]",
+            "Files": ["csv_ytgc009.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.10] [Erotic Maid]",
+            "Files": ["csv_ytgc010.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.11] [Flirty Love Maid]",
+            "Files": ["csv_ytgc011.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.12[ [Abyss Maid]",
+            "Files": ["csv_ytgc012.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.13] [Pig Breeder Maid]",
+            "Files": ["csv_ytgc013.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.14] [Love Bound Maid]",
+            "Files": ["csv_ytgc014.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.15] [Ecstasy Maid]",
+            "Files": ["csv_ytgc015.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.16] [Crisis Maid]",
+            "Files": ["csv_ytgc016.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.17] [Healing Maid]",
+            "Files": ["csv_ytgc017.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.18] [Obedient Maid]",
+            "Files": ["csv_ytgc018.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.19] [Soap Maid]",
+            "Files": ["csv_omytgc001.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yotogi Class Skills Vol.20]",
+            "Files": ["csv_omytgc002.arc"]
+        },
+        {
+            "Name": "[Denkigai 2015 Summer Item Set] [Event Version]",
+            "Files": ["menu_denkigai2015s001.arc"]
+        },
+        {
+            "Name": "[Denkigai 2015 Winter Item Set] [Event Version]",
+            "Files": ["menu_denkigai2015w.arc"]
+        },
+        {
+            "Name": "[Denkigai 2015 Winter Merchandise] [Mug]",
+            "Files": ["bg_denkigai2015wMugcup.arc"]
+        },
+        {
+            "Name": "[Denkigai 2015 Winter Merchandise] [Photo Stand B]",
+            "Files": ["csv_denkigai2015wStandB.arc"]
+        },
+        {
+            "Name": "[Denkigai 2015 Winter] [Maid Greetings Voice CD]",
+            "Files": ["script_denkigai2016wvoicedvd.arc"]
+        },
+        {
+            "Name": "[Denkigai 2015 Winter] [Panties+Skill]",
+            "Files": ["menu_denkigai2015wPants.arc"]
+        },
+        {
+            "Name": "[Denkigai 2015 Winter] [Towel Set]",
+            "Files": ["menu_denkigai2015wTowel.arc"]
+        },
+        {
+            "Name": "[Denkigai 2016 Summer Item Set] [Event Version]",
+            "Files": ["menu_denkigai2016s.arc"]
+        },
+        {
+            "Name": "[Denkigai 2016 Summer] [Act 2 Poster]",
+            "Files": ["csv_denkigai2016sPoster3d2act2.arc"]
+        },
+        {
+            "Name": "[Denkigai 2016 Summer] [Blindfold+Skill]",
+            "Files": ["menu_denkigai2016sMekakusi.arc"]
+        },
+        {
+            "Name": "[Denkigai 2016 Summer] [Incense Coaster+Skill]",
+            "Files": ["csv_denkigai2016sOkou.arc"]
+        },
+        {
+            "Name": "[Denkigai 2016 Summer] [Lap Pillow Plugin]",
+            "Files": ["motion_denkigai2016sSoine.arc"]
+        },
+        {
+            "Name": "[Denkigai 2016 Summer] [Leathercase+Mastercard+Mugcup+Stand]",
+            "Files": ["csv_denkigai2016sMugcup.arc"]
+        },
+        {
+            "Name": "[Denkigai 2016 Summer] [Maid Water]",
+            "Files": ["bg_denkigai2016sMizu.arc"]
+        },
+        {
+            "Name": "[Denkigai 2016 Summer] [School Swimsuit + Skill]",
+            "Files": ["menu_denkigai2016sSukumizu.arc"]
+        },
+        {
+            "Name": "[Denkigai 2016 Winter Item Set] [Event Version]",
+            "Files": ["menu_denkigai2016w.arc"]
+        },
+        {
+            "Name": "[Denkigai 2016 Winter] [Calendar]",
+            "Files": ["csv_denkigai2016wcalendar.arc"]
+        },
+        {
+            "Name": "[Denkigai 2016 Winter] [Collar]",
+            "Files": ["menu_denkigai2016wkubiwa.arc"]
+        },
+        {
+            "Name": "[Denkigai 2016 Winter] [Maid Encouragement Plugin]",
+            "Files": ["csv_denkigai2016wvoicedvd.arc"]
+        },
+        {
+            "Name": "[Denkigai 2017 Summer Item Set] [Event Version]",
+            "Files": ["menu_denkigai2017s.arc"]
+        },
+        {
+            "Name": "[Denkigai 2017 Winter Item Set] [Event Version]",
+            "Files": ["menu_dlcdenkigai2017w.arc"]
+        },
+        {
+            "Name": "[Denkigai 2018 Summer Item Set] [Event Version]",
+            "Files": ["menu_denkigai2018s.arc"]
+        },
+        {
+            "Name": "[Denkigai 2018 Winter Item Set] [Event Version]",
+            "Files": ["menu_denkigai2018w.arc"]
+        },
+        {
+            "Name": "[Denkigai 2018 Winter] [Gift Card]",
+            "Files": ["csv_denkigai2018wpcard.arc"]
+        },
+        {
+            "Name": "[Denkigai 2018 Winter] [Mumuta Original Costume Set]",
+            "Files": ["menu_denkigai2018wmumuta.arc"]
+        },
+        { "Name": "[CM3D2 Shop] [Cow Costume]", "Files": ["menu_dlc014.arc"] },
+        {
+            "Name": "[CM3D2 Shop] [Dohatsuten Male Head]",
+            "Files": ["menu_dlc099.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Fox Ears and Tail]",
+            "Files": ["menu_dlc079.arc"]
+        },
+        { "Name": "[CM3D2 Shop] [Headphones]", "Files": ["menu_dlc098.arc"] },
+        {
+            "Name": "[CM3D2 Shop] [Maid-to-Order Hairsets]",
+            "Files": ["menu_dlc095.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [New Years Hair Decoration]",
+            "Files": ["menu_dlc118.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Separate Maid Uniform]",
+            "Files": ["menu_dlc001.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Sports Sunglasses]",
+            "Files": ["menu_dlc090.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [White Lace Set]",
+            "Files": ["menu_dlc069.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Yandere Launch Set]",
+            "Files": ["menu_ordermade001.arc"]
+        },
+        {
+            "Name": "[CM3D2 VR] [Fried Chicken Earrings]",
+            "Files": ["menu_vr.arc"]
+        },
+        {
+            "Name": "[DLSite Bonus] [Original Mascot Set]",
+            "Files": ["menu_dlsite.arc"]
+        },
+        {
+            "Name": "[Release Bonus] [Launch Shirt + Drill]",
+            "Files": ["menu_release.arc"]
+        },
+        {
+            "Name": "[Sixteen Bonus] [Nao Shirt]",
+            "Files": ["menu_sixteen.arc"]
+        },
+        {
+            "Name": "[TECH GIAN Bonus] [November 2016 Issue]",
+            "Files": ["menu_tech002.arc"]
+        },
+        {
+            "Name": "[Tokyo Big Sight Bonus] [Medal Necklace]",
+            "Files": ["menu_chirashi001.arc"]
+        },
+        {
+            "Name": "[Vocal Collection] [Dress Set]",
+            "Files": ["menu_cd001.arc"]
+        },
+        { "Name": "[W-Pack Bonus]", "Files": ["menu_wp001.arc"] },
+        {
+            "Name": "[CM3D2 NicoNicoLive] [VIP Event for Sakura - The Netori'd Catgirl]",
+            "Files": ["csv_nc_sakura.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [1st Anniversary VIP Event]",
+            "Files": ["csv_anniversary001.arc"]
+        },
+        {
+            "Name": "[CM3D2 Christmas 2016 and VIP Events]",
+            "Files": ["script_xmas2016.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Valentines Events 2016]",
+            "Files": ["script_event001.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [Valentines Events 2017]",
+            "Files": ["script_event002.arc"]
+        },
+        {
+            "Name": "[CM3D2 Shop] [KISS Event 2017 March Plugin]",
+            "Files": ["csv_kissevent2017march.arc"]
+        },
+        {
+            "Name": "[Rewards from Contest] [Maid After Hours] [Masturbation Peeping VIP]",
+            "Files": ["voice_urayome001.arc"]
+        },
+        { "Name": "[CM3D2 BugBug 2017]", "Files": ["csv_bugbug.arc"] },
+        {
+            "Name": "[S-Court CR Shop] [Bromide]",
+            "Files": ["bg_yomeidokanteidan_bromide.arc"]
+        },
+        {
+            "Name": "[S-Court CR Shop] [Sticker]",
+            "Files": ["bg_yomeidokanteidan_sticker.arc"]
+        },
+        {
+            "Name": "[S-Court CR Shop] [Portrait]",
+            "Files": ["bg_yomeidokanteidan_portrait.arc"]
+        },
+        {
+            "Name": "[S-Court CR Shop] [Nice Pot]",
+            "Files": ["bg_yomeidokanteidan_nicepot.arc"]
+        },
+        {
+            "Name": "[S-Court CR Shop] [Nice Scroll]",
+            "Files": ["bg_yomeidokanteidan_nicescroll.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [GP01 Pre-Order Bonus] [Sexy Tail Dress Set]",
+            "Files": ["texture_shop021.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [BitCash Collaboration Set]",
+            "Files": ["menu_bcc.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [GoGo Curry Collaboration Costume Set]",
+            "Files": ["texture_ggcc.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [Cafe Mailish Collaboration Maid Set]",
+            "Files": ["menu_maidcafec.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [Cafe Mailish Collaboration Maid Set II]",
+            "Files": ["menu_maidcafec2.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [bugbug Lingerie]",
+            "Files": ["menu_bugbug002.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [COM3D2 Early Reservation Campaign Fancy Paper]",
+            "Files": ["texture_bcc2.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [COM3D2 Grade Up Reservation Campaign Vol. 1]",
+            "Files": ["menu_3d21reserve.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [COM3D2] [Music Dress Set & Vocal Collection Desktop Item]",
+            "Files": ["menu_cd001.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [COM3D2] [Groove Dress Set & Vocal Collection 2 Desktop Item]",
+            "Files": ["menu_cd002.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [Tech Gian Bonus] [Sakura, Moyu Kuro Narikiri Collaboration Set]",
+            "Files": ["menu_tech003.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [Tech Gian] [Voice Actress Concerto]",
+            "Files": ["menu_vac001.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [Tech Gian] [Voice Actress Concerto 2]",
+            "Files": ["menu_vac002.arc"]
+        },
+        {
+            "Name": "[COM3D2 Backwards] [KISS Event 2018 - KISS 20th Anniversary Memorial Book Desktop Item]",
+            "Files": ["menu_kissevent2018.arc"]
+        }
+    ]
+}

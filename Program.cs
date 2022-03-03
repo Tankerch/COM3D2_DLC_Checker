@@ -13,25 +13,34 @@ namespace COM3D2_DLC_Checker
     class Program
     {
         //  =============== Variables ===============
-        static readonly string DlcListFileName = "COM3D2_dlc_list.json";
+        static readonly string CM_DlcListFileName = "CM3D2_dlc_list.json";
+        static readonly string CM_DlcListUrl = $"https://raw.githubusercontent.com/Tankerch/COM3D2_DLC_Checker/master/{CM_DlcListFileName}";
 
-        static readonly string DlcListUrl = $"https://raw.githubusercontent.com/Tankerch/COM3D2_DLC_Checker/master/{DlcListFileName}";
+        static readonly string COM_DlcListFileName = "COM3D2_dlc_list.json";
+
+        static readonly string COM_DlcListUrl = $"https://raw.githubusercontent.com/Tankerch/COM3D2_DLC_Checker/master/{COM_DlcListFileName}";
 
         static readonly string RepoUrl = "github.com/Tankerch/COM3D2_DLC_Checker";
 
         //  =============== END Variables ===============
 
-        static readonly string DlcListPath = Path.Combine(Directory.GetCurrentDirectory(), DlcListFileName);
+        static readonly string CM_DlcListPath = Path.Combine(Directory.GetCurrentDirectory(), CM_DlcListFileName);
+        static readonly string COM_DlcListPath = Path.Combine(Directory.GetCurrentDirectory(), COM_DlcListFileName);
 
         static readonly string InstalledKey = "installed";
         static readonly string NotInstalledKey = "notInstalled";
 
         static readonly HttpClient client = new HttpClient();
 
+        static GameCode SelectedGameCode = GameCode.COM3D2;
+
         static void Main(string[] args)
         {
 
             PrintHeader();
+
+            // Get game code selection from user
+            SelectedGameCode = GetGameCode();
 
             // Get DLC list from Cloud
             // User can connect to cloud?
@@ -47,7 +56,8 @@ namespace COM3D2_DLC_Checker
             }
             catch (FileNotFoundException)
             {
-                ConsoleColor(System.ConsoleColor.Red, $"\"{DlcListPath}\" doesn't exist,\nConnect to the internet to download it automatically");
+                string usedPath = SelectedGameCode == GameCode.CM3D2 ? CM_DlcListPath : COM_DlcListPath;
+                ConsoleColor(System.ConsoleColor.Red, $"\"{usedPath}\" doesn't exist,\nConnect to the internet to download it automatically");
             }
             catch (FormatException)
             {
@@ -74,23 +84,81 @@ namespace COM3D2_DLC_Checker
         static void PrintHeader()
         {
             ConsoleColor(System.ConsoleColor.Cyan, "===========================================================================================");
-            ConsoleColor(System.ConsoleColor.Cyan, $"COM_DLC_Checker     |   {RepoUrl}");
+            ConsoleColor(System.ConsoleColor.Cyan, $"CM3D2/COM3D2 DLC Checker     |   {RepoUrl}");
             ConsoleColor(System.ConsoleColor.Cyan, "===========================================================================================");
+        }
+
+        static GameCode GetGameCode()
+        {
+            // Default value : COM3D2
+            GameCode result = SelectedGameCode;
+
+            Console.WriteLine("Select game you want to check (Use `Up` and `Down` arrow to select):");
+            PrintGameSelection(result);
+            while (true)
+            {
+                ConsoleKey input = Console.ReadKey().Key;
+                // Enter - Exit console loop
+                if (input == ConsoleKey.Enter)
+                {
+                    break;
+                }
+                // UpArrow - Select COM3D2
+                if (input == ConsoleKey.UpArrow && result == GameCode.CM3D2)
+                {
+                    result = GameCode.COM3D2;
+                    ClearGameSelectionText();
+                    PrintGameSelection(result);
+                }
+                // DownArrow - Select CM3D2
+                if (input == ConsoleKey.DownArrow && result == GameCode.COM3D2)
+                {
+                    result = GameCode.CM3D2;
+                    ClearGameSelectionText();
+                    PrintGameSelection(result);
+                }
+            }
+            Console.WriteLine("");
+            return result;
+        }
+
+        static void ClearGameSelectionText()
+        {
+            Console.SetCursorPosition(0, Console.CursorTop - 1);
+            Console.SetCursorPosition(0, Console.CursorTop - 1);
+
+        }
+
+        static void PrintGameSelection(GameCode currentSelection)
+        {
+            const ConsoleColor selectedColor = System.ConsoleColor.Green;
+            const ConsoleColor unselectedColor = System.ConsoleColor.White;
+            ConsoleColor(currentSelection == GameCode.COM3D2 ? selectedColor : unselectedColor, "- COM3D2 (Custom Order Maid 3D 2)");
+            ConsoleColor(currentSelection == GameCode.CM3D2 ? selectedColor : unselectedColor, "- CM3D2 (Custom Maid 3D 2)");
         }
 
         static async Task GetDLClistFromCloud()
         {
             try
             {
-                string responseBody = await client.GetStringAsync(DlcListUrl);
+                string url = COM_DlcListUrl;
+                string fileName = COM_DlcListFileName;
+
+                // Change to CM3D2
+                if (SelectedGameCode == GameCode.CM3D2)
+                {
+                    url = CM_DlcListUrl;
+                    fileName = CM_DlcListFileName;
+                }
+                string responseBody = await client.GetStringAsync(url);
 
                 // Write to local file
-                using StreamWriter writer = new StreamWriter(DlcListFileName);
+                using StreamWriter writer = new StreamWriter(fileName);
                 writer.Write(responseBody);
             }
             catch (HttpRequestException)
             {
-                Console.WriteLine("Can't connect to internet, offline file will be used");
+                ConsoleColor(System.ConsoleColor.Yellow, "Can't connect to internet, offline file will be used");
             }
 
         }
@@ -106,7 +174,8 @@ namespace COM3D2_DLC_Checker
             //      },
             //     ]
             // }";
-            string jsonString = File.ReadAllText(DlcListPath);
+            string dlcListFilePath = SelectedGameCode == GameCode.CM3D2 ? CM_DlcListPath : COM_DlcListPath;
+            string jsonString = File.ReadAllText(dlcListFilePath);
             DLCList? result = JsonSerializer.Deserialize<DLCList>(jsonString);
             if (result == null)
             {
@@ -125,7 +194,7 @@ namespace COM3D2_DLC_Checker
             }
             catch
             {
-                throw new InvalidDataException();
+                throw new FormatException();
             }
 
             return result.Items.ToDictionary(keySelector: item => item.Name, item => item.Files);
@@ -145,44 +214,72 @@ namespace COM3D2_DLC_Checker
             // Convert AssemblyVersion to SemanticVersion 
             currentVersionString = currentVersionString.Remove(currentVersionString.Length - 2);
 
-            // Compare
+            // Compare to major break
             SemanticVersioning.Version currentVersion = new SemanticVersioning.Version(currentVersionString);
-            return new SemanticVersioning.Range($"~{minVersionString}").IsSatisfied(currentVersion);
+            return new SemanticVersioning.Range($"~{minVersionString.Split(".").First()}").IsSatisfied(currentVersion);
         }
 
 
-        static string GetCOM3D2installPath()
+        static string GetGameInstallPath()
         {
-            // Default: Current Directory of COM3D2_DLC_Checker
-            // Will replaced by COM3D2 InstallPath Registry
-            const string keyName = "HKEY_CURRENT_USER" + "\\" + "SOFTWARE\\KISS\\カスタムオーダーメイド3D2";
-
-            string? gameDirectoryRegistry = Registry.GetValue(keyName, "InstallPath", "") as string;
-
+            // Try to get Game InstallPath from Registry
+            string? gameDirectoryRegistry = GetRegistryInstallPath();
             if (gameDirectoryRegistry != null)
             {
                 return gameDirectoryRegistry;
             }
+            // If missing/not set, apps will use current directory
             else
             {
-                ConsoleColor(System.ConsoleColor.Yellow, "Warning : COM3D2 installation directory is not set in registry. Will using current directory'");
+                ConsoleColor(System.ConsoleColor.Yellow, $"Warning : {SelectedGameCode} installation directory is not set in registry. Will using current directory");
                 return Directory.GetCurrentDirectory();
+            }
+        }
+
+        static string? GetRegistryInstallPath()
+        {
+
+            switch (SelectedGameCode)
+            {
+                case GameCode.CM3D2:
+                    string cmKeyName = "HKEY_CURRENT_USER\\SOFTWARE\\KISS\\カスタムメイド3D2";
+                    return Registry.GetValue(cmKeyName, "InstallPath", "") as string;
+                case GameCode.COM3D2:
+                    // WHY KISS?! WHY YOU DO THIS FFS?!!
+                    string comKeyName = "HKEY_CURRENT_USER\\SOFTWARE\\KISS\\カスタムオーダーメイド3D2";
+                    string? result = Registry.GetValue(comKeyName, "InstallPath", "") as string;
+
+                    // Try to get Registry COM3D2.5 version
+                    if (result == null)
+                    {
+                        comKeyName = "HKEY_CURRENT_USER\\SOFTWARE\\KISS\\カスタムオーダーメイド3D2.5";
+                        result = Registry.GetValue(comKeyName, "InstallPath", "") as string;
+                    }
+                    return result;
+                default:
+                    return null;
             }
         }
 
         static List<string> ReadFilesFromGameDirectory()
         {
-            string gameRootDir = GetCOM3D2installPath();
+            string gameRootDir = GetGameInstallPath();
             // string gameRootDir = "D:\\Games\\COM3D2";
             string gamedataDir = gameRootDir + "\\GameData";
-            string gamedata20Dir = gameRootDir + "\\GameData_20";
 
             List<string> gamedataList = new List<string>();
 
             try
             {
+                // Common - CM3D2/COM3D2
                 gamedataList.AddRange(GetFilesFromDirectory(gamedataDir));
-                gamedataList.AddRange(GetFilesFromDirectory(gamedata20Dir));
+                // Exclusive - COM3D2
+                if (SelectedGameCode == GameCode.COM3D2)
+                {
+                    string gamedata20Dir = gameRootDir + "\\GameData_20";
+                    gamedataList.AddRange(GetFilesFromDirectory(gamedata20Dir));
+                }
+
             }
             catch
             {

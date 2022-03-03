@@ -12,4 +12,9 @@ public class Item
     public List<string> Files { get; set; }
 }
 
+public enum GameCode
+{
+    COM3D2,
+    CM3D2
+}
 
