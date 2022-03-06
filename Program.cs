@@ -4,7 +4,7 @@ using System.Text.Json;
 using System.Reflection;
 
 
-// Realse
+// Release
 // dotnet publish -c Release
 
 namespace COM3D2_DLC_Checker
@@ -13,19 +13,19 @@ namespace COM3D2_DLC_Checker
     class Program
     {
         //  =============== Variables ===============
-        static readonly string CM_DlcListFileName = "CM3D2_dlc_list.json";
-        static readonly string CM_DlcListUrl = $"https://raw.githubusercontent.com/Tankerch/COM3D2_DLC_Checker/master/{CM_DlcListFileName}";
+        static readonly string CM_DLCListFileName = "CM3D2_dlc_list.json";
+        static readonly string CM_DLCListUrl = $"https://raw.githubusercontent.com/Tankerch/COM3D2_DLC_Checker/master/{CM_DLCListFileName}";
 
-        static readonly string COM_DlcListFileName = "COM3D2_dlc_list.json";
+        static readonly string COM_DLCListFileName = "COM3D2_dlc_list.json";
 
-        static readonly string COM_DlcListUrl = $"https://raw.githubusercontent.com/Tankerch/COM3D2_DLC_Checker/master/{COM_DlcListFileName}";
+        static readonly string COM_DLCListUrl = $"https://raw.githubusercontent.com/Tankerch/COM3D2_DLC_Checker/master/{COM_DLCListFileName}";
 
         static readonly string RepoUrl = "github.com/Tankerch/COM3D2_DLC_Checker";
 
         //  =============== END Variables ===============
 
-        static readonly string CM_DlcListPath = Path.Combine(Directory.GetCurrentDirectory(), CM_DlcListFileName);
-        static readonly string COM_DlcListPath = Path.Combine(Directory.GetCurrentDirectory(), COM_DlcListFileName);
+        static readonly string CM_DLCListPath = Path.Combine(Directory.GetCurrentDirectory(), CM_DLCListFileName);
+        static readonly string COM_DLCListPath = Path.Combine(Directory.GetCurrentDirectory(), COM_DLCListFileName);
 
         static readonly string InstalledKey = "installed";
         static readonly string NotInstalledKey = "notInstalled";
@@ -46,31 +46,31 @@ namespace COM3D2_DLC_Checker
             // User can connect to cloud?
             // - Yes    : Save cloud data to local file
             // - No     : Use local data at 'DlcListFileName.json' file
-            GetDLClistFromCloud().GetAwaiter().GetResult();
+            GetDLCListFromCloud().GetAwaiter().GetResult();
 
             // Read from DLC list
             Dictionary<string, List<string>>? dlcList = null;
             try
             {
-                dlcList = ReadDLClist();
+                dlcList = GetDLClist();
             }
-            catch (FileNotFoundException)
+            catch (JSONNotFoundException)
             {
-                string usedPath = SelectedGameCode == GameCode.CM3D2 ? CM_DlcListPath : COM_DlcListPath;
+                string usedPath = SelectedGameCode == GameCode.CM3D2 ? CM_DLCListPath : COM_DLCListPath;
                 ConsoleColor(System.ConsoleColor.Red, $"\"{usedPath}\" doesn't exist,\nConnect to the internet to download it automatically");
             }
-            catch (FormatException)
+            catch (JSONBadFormatException)
             {
                 ConsoleColor(System.ConsoleColor.Red, "Failed to read DLC files");
             }
-            catch (InvalidDataException)
+            catch (JSONInvalidVersionException)
             {
                 ConsoleColor(System.ConsoleColor.Red, "Using outdated apps to read DLC list, try to update this app");
             }
             if (dlcList == null) Exit();
 
             // Read from game directory
-            List<string> gameFiles = ReadFilesFromGameDirectory();
+            List<string> gameFiles = GetFilesFromGameDirectory();
 
             // Validate DLC
             Dictionary<string, List<string>> result = CompareListToGameFiles(dlcList!, gameFiles);
@@ -91,7 +91,7 @@ namespace COM3D2_DLC_Checker
         static GameCode GetGameCode()
         {
             // Default value : COM3D2
-            GameCode result = SelectedGameCode;
+            GameCode result = GameCode.COM3D2;
 
             Console.WriteLine("Select game you want to check (Use `Up` and `Down` arrow to select):");
             PrintGameSelection(result);
@@ -104,14 +104,14 @@ namespace COM3D2_DLC_Checker
                     break;
                 }
                 // UpArrow - Select COM3D2
-                if (input == ConsoleKey.UpArrow && result == GameCode.CM3D2)
+                if (input == ConsoleKey.UpArrow && result != GameCode.COM3D2)
                 {
                     result = GameCode.COM3D2;
                     ClearGameSelectionText();
                     PrintGameSelection(result);
                 }
                 // DownArrow - Select CM3D2
-                if (input == ConsoleKey.DownArrow && result == GameCode.COM3D2)
+                if (input == ConsoleKey.DownArrow && result != GameCode.CM3D2)
                 {
                     result = GameCode.CM3D2;
                     ClearGameSelectionText();
@@ -137,18 +137,19 @@ namespace COM3D2_DLC_Checker
             ConsoleColor(currentSelection == GameCode.CM3D2 ? selectedColor : unselectedColor, "- CM3D2 (Custom Maid 3D 2)");
         }
 
-        static async Task GetDLClistFromCloud()
+        static async Task GetDLCListFromCloud()
         {
             try
             {
-                string url = COM_DlcListUrl;
-                string fileName = COM_DlcListFileName;
+                // Default value : COM3D2
+                string url = COM_DLCListUrl;
+                string fileName = COM_DLCListFileName;
 
                 // Change to CM3D2
                 if (SelectedGameCode == GameCode.CM3D2)
                 {
-                    url = CM_DlcListUrl;
-                    fileName = CM_DlcListFileName;
+                    url = CM_DLCListUrl;
+                    fileName = CM_DLCListFileName;
                 }
                 string responseBody = await client.GetStringAsync(url);
 
@@ -163,7 +164,7 @@ namespace COM3D2_DLC_Checker
 
         }
 
-        static Dictionary<string, List<string>> ReadDLClist()
+        static Dictionary<string, List<string>> GetDLClist()
         {
             // string testString = @"{
             //     ""Version"": 25,
@@ -174,30 +175,47 @@ namespace COM3D2_DLC_Checker
             //      },
             //     ]
             // }";
-            string dlcListFilePath = SelectedGameCode == GameCode.CM3D2 ? CM_DlcListPath : COM_DlcListPath;
-            string jsonString = File.ReadAllText(dlcListFilePath);
-            DLCList? result = JsonSerializer.Deserialize<DLCList>(jsonString);
-            if (result == null)
-            {
-                throw new FormatException();
-            }
-
-            // Validate DLC version with Apps
-            bool isValid = true;
+            string dlcListFilePath = SelectedGameCode == GameCode.CM3D2 ? CM_DLCListPath : COM_DLCListPath;
             try
             {
-                isValid = CheckDLCListVersion(result.AppMinVersion);
+                DLCList dlcList = ReadDLCJSON(dlcListFilePath);
+
+                // Validate DLC version with Apps
+                bool isValid = CheckDLCListVersion(dlcList.AppMinVersion);
                 if (!isValid)
                 {
-                    throw new InvalidDataException();
+                    throw new JSONInvalidVersionException();
                 }
+                return dlcList.Items.ToDictionary(keySelector: item => item.Name, item => item.Files);
+            }
+            catch (JSONException)
+            {
+                throw;
             }
             catch
             {
-                throw new FormatException();
+                throw new JSONBadFormatException();
             }
 
-            return result.Items.ToDictionary(keySelector: item => item.Name, item => item.Files);
+        }
+
+        static DLCList ReadDLCJSON(string filePath)
+        {
+            try
+            {
+                string jsonString = File.ReadAllText(filePath);
+                DLCList? result = JsonSerializer.Deserialize<DLCList>(jsonString);
+                if (result == null) throw new JSONBadFormatException();
+                return result;
+            }
+            catch (FileNotFoundException)
+            {
+                throw new JSONNotFoundException();
+            }
+            catch
+            {
+                throw new JSONBadFormatException();
+            }
         }
 
         static bool CheckDLCListVersion(string minVersionString)
@@ -238,30 +256,34 @@ namespace COM3D2_DLC_Checker
 
         static string? GetRegistryInstallPath()
         {
-
-            switch (SelectedGameCode)
-            {
-                case GameCode.CM3D2:
-                    string cmKeyName = "HKEY_CURRENT_USER\\SOFTWARE\\KISS\\カスタムメイド3D2";
-                    return Registry.GetValue(cmKeyName, "InstallPath", "") as string;
-                case GameCode.COM3D2:
-                    // WHY KISS?! WHY YOU DO THIS FFS?!!
-                    string comKeyName = "HKEY_CURRENT_USER\\SOFTWARE\\KISS\\カスタムオーダーメイド3D2";
-                    string? result = Registry.GetValue(comKeyName, "InstallPath", "") as string;
-
-                    // Try to get Registry COM3D2.5 version
-                    if (result == null)
+            List<string> PossibleRegistry = new List<string>()
                     {
-                        comKeyName = "HKEY_CURRENT_USER\\SOFTWARE\\KISS\\カスタムオーダーメイド3D2.5";
-                        result = Registry.GetValue(comKeyName, "InstallPath", "") as string;
-                    }
-                    return result;
-                default:
-                    return null;
+                        "CUSTOM ORDER MAID 3D 2",
+                        "CUSTOM ORDER MAID 3D 2.5",
+                        "カスタムオーダーメイド3D2",
+                        "カスタムオーダーメイド3D2.5"
+                    };
+
+            if (SelectedGameCode == GameCode.CM3D2)
+            {
+                PossibleRegistry = new List<string>()
+                    {
+                        "CUSTOM MAID 3D 2",
+                        "カスタムメイド3D2"
+                    };
             }
+
+            string? result = null;
+            foreach (string RegistryKey in PossibleRegistry)
+            {
+                string key = $"HKEY_CURRENT_USER\\SOFTWARE\\KISS\\{RegistryKey}";
+                result = Registry.GetValue(key, "InstallPath", "") as string;
+                if (result != null) break;
+            }
+            return result;
         }
 
-        static List<string> ReadFilesFromGameDirectory()
+        static List<string> GetFilesFromGameDirectory()
         {
             string gameRootDir = GetGameInstallPath();
             // string gameRootDir = "D:\\Games\\COM3D2";
@@ -272,12 +294,12 @@ namespace COM3D2_DLC_Checker
             try
             {
                 // Common - CM3D2/COM3D2
-                gamedataList.AddRange(GetFilesFromDirectory(gamedataDir));
+                gamedataList.AddRange(ScanFilesFromDirectory(gamedataDir));
                 // Exclusive - COM3D2
                 if (SelectedGameCode == GameCode.COM3D2)
                 {
                     string gamedata20Dir = gameRootDir + "\\GameData_20";
-                    gamedataList.AddRange(GetFilesFromDirectory(gamedata20Dir));
+                    gamedataList.AddRange(ScanFilesFromDirectory(gamedata20Dir));
                 }
 
             }
@@ -290,18 +312,18 @@ namespace COM3D2_DLC_Checker
             return gamedataList;
         }
 
-        static IEnumerable<string> GetFilesFromDirectory(string path)
+        static IEnumerable<string> ScanFilesFromDirectory(string path)
         {
             return Directory.GetFiles(path, "*", SearchOption.TopDirectoryOnly).Select(Path.GetFileName).TakeWhile(file => file != null).Cast<string>();
         }
 
-        static Dictionary<string, List<string>> CompareListToGameFiles(Dictionary<string, List<string>> dlcList, List<string> gameFiles)
+        static Dictionary<string, List<string>> CompareListToGameFiles(Dictionary<string, List<string>> DlcList, List<string> gameFiles)
         {
             List<string> installedDlc = new List<string>();
             List<string> notInstalledDlc = new List<string>();
 
             // Loop for all DLC items
-            foreach (KeyValuePair<string, List<string>> item in dlcList)
+            foreach (KeyValuePair<string, List<string>> item in DlcList)
             {
                 bool isSubset = !item.Value.Except(gameFiles).Any();
 

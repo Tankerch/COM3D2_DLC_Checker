@@ -18,3 +18,26 @@ public enum GameCode
     CM3D2
 }
 
+
+// ========== Exceptions ========== 
+// JSON handling 
+abstract class JSONException : Exception
+{
+
+}
+
+class JSONNotFoundException : JSONException
+{
+
+}
+
+class JSONBadFormatException : JSONException
+{
+
+}
+
+class JSONInvalidVersionException : JSONException
+{
+
+}
+
